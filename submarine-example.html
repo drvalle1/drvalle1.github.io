@@ -13,7 +13,7 @@
 
 
 
-<title>index.utf8</title>
+<title>submarine-example.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -244,6 +244,97 @@ $l.bootstrap=Uc;}}bm();
 </script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -275,7 +366,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Introduction Bayesian Statistics Applied to Life Sciences
+Finding a submarine
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -298,154 +389,59 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<p>This website contains part of the material I use for the semester-long course “Introduction to Bayesian statistics applied to life sciences” that I teach at Univ. of Florida. This course is geared towards students that have not been formally trained as statisticians and therefore it does not rely on linear algebra or advanced calculus. However, this material will require some understanding of basic calculus concepts and distribution theory as well as good grasp of programming.</p>
-<p>Observation: I am still putting this website together so some of the material is not posted yet and there might be some rough edges. If you have any suggestions or comments, feel free to contact me (drvalle at ufl dot edu).</p>
-<div id="intro-material" class="section level2">
-<h2>Intro material</h2>
-<ol start="0" style="list-style-type: decimal">
-<li><p><a href="0_Approach_to_teaching_Bayes.html">Approach to teaching to Bayes</a></p></li>
-<li><p><a href="1_Introduction_to_Bayes.html">Introduction to Bayes</a></p></li>
-<li><p><a href="2_Probabilities_Example_death_penalty.html">Probabilities: a quick example on death penalty</a></p></li>
-<li><p><a href="3_Probability_rules.html">Probability rules</a></p></li>
-<li><p><a href="4_Bayes_theorem.html">Bayes theorem</a></p></li>
-</ol>
-<ul>
-<li><a href="submarine-example.html">Submarine example</a></li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="8B_PMF_and_PDF.html">Quick overview of PMFs and PDFs</a></p></li>
-<li><p>The likelihood function</p></li>
-</ol>
-<ul>
-<li><a href="7_Likelihood.html">Likelihood for simple models</a></li>
-<li><a href="7a_Likelihood_regression.html">Likelihood for regression models</a></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>Maximum likelihood estimation (MLE)</li>
-</ol>
-<ul>
-<li><a href="8_MLE.html">Basic ideas</a></li>
-<li><a href="8A_MLE.html">An example of gamma regression</a></li>
-</ul>
+<div id="rationale" class="section level2">
+<h2>Rationale</h2>
+<p>Bayesian statistics has been used quite successfully for a number of things, including finding submarines! According to <span class="citation">(Barcena et al. 2019)</span>:</p>
+<p><em>&quot;The USS Scorpion was a nuclear submarine in the U.S. Navy. It disappeared on May 22, 1968, close to the Azores archipelago, when returning to its base in Norfolk from a mission. The reasons are as yet uncertain. There was speculation about an explosion, accidental activation of a foul torpedo, a Soviet attack, and various malfunctions.</em></p>
+<p><em>After several days elapsed without contact, the search for the submarine started. The vicinity of the last known position of the ship was divided in 400 sectors. An a priori probability of containing the remaining of the ship, using available information and expert’s assessments, was ascribed to each such sector.</em></p>
+<p><em>The search was conducted using methods of Bayesian search theory, on the advice of statistical experts. These methods had been used with success in the search of a hydrogen bomb accidentally dropped by a B52 bomber off the southern coast of Spain, near Palomares, in 1966. The search for the USS Scorpion also ended with success in October 1968, when parts of the submarine were found in the sea bed under 3000m of water, some 400 nautical miles soutwest of the Azores&quot;</em></p>
 </div>
-<div id="basics-of-bayes" class="section level2">
-<h2>Basics of Bayes</h2>
-<ol style="list-style-type: decimal">
-<li>Conjugate likelihood-prior pairs: a basketball example</li>
-</ol>
+<div id="prior-probabilities" class="section level2">
+<h2>Prior probabilities</h2>
+<p>To simplify things, let’s assume we have far fewer sectors to search, say 25. Furthermore, let’s assume we have the following prior distribution for where our submarine is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>(<span class="dt">all=</span><span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#create prior probability for location</span></a>
+<a class="sourceLine" id="cb1-5" title="5">nloc=<span class="dv">5</span></a>
+<a class="sourceLine" id="cb1-6" title="6">seq1=<span class="dv">1</span><span class="op">:</span>nloc</a>
+<a class="sourceLine" id="cb1-7" title="7">combo=<span class="kw">expand.grid</span>(<span class="dt">x=</span>seq1,<span class="dt">y=</span>seq1)</a>
+<a class="sourceLine" id="cb1-8" title="8">combo<span class="op">$</span>prob=<span class="kw">dnorm</span>(combo<span class="op">$</span>x,<span class="dt">mean=</span><span class="dv">3</span>,<span class="dt">sd=</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">dnorm</span>(combo<span class="op">$</span>y,<span class="dt">mean=</span><span class="dv">3</span>,<span class="dt">sd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1-9" title="9">combo<span class="op">$</span>prob=combo<span class="op">$</span>prob<span class="op">/</span><span class="kw">sum</span>(combo<span class="op">$</span>prob)</a>
+<a class="sourceLine" id="cb1-10" title="10"></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">#visual depiction of prior probabilities</span></a>
+<a class="sourceLine" id="cb1-12" title="12">pi1=<span class="kw">matrix</span>(<span class="ot">NA</span>,nloc,nloc)</a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(combo)){</a>
+<a class="sourceLine" id="cb1-14" title="14">  pi1[combo<span class="op">$</span>x[i],combo<span class="op">$</span>y[i]]=combo<span class="op">$</span>prob[i]  </a>
+<a class="sourceLine" id="cb1-15" title="15">}</a>
+<a class="sourceLine" id="cb1-16" title="16"></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),<span class="dt">ask=</span>T)</a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="kw">image</span>(pi1,<span class="dt">x=</span><span class="dv">1</span><span class="op">:</span>nloc,<span class="dt">y=</span><span class="dv">1</span><span class="op">:</span>nloc,<span class="dt">xlab=</span><span class="st">&#39;&#39;</span>,<span class="dt">ylab=</span><span class="st">&#39;&#39;</span>)</a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="kw">text</span>(<span class="dt">x=</span>combo<span class="op">$</span>x,<span class="dt">y=</span>combo<span class="op">$</span>y,<span class="kw">round</span>(combo<span class="op">$</span>prob,<span class="dv">3</span>),<span class="dt">pos=</span><span class="dv">1</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Furthermore, say that our probability of detecting the submarine, given that it is present in the sector that we are looking at, is <span class="math inline">\(\theta=0.1\)</span>. We assume that this is known (i.e., we are not estimating this parameter).</p>
+<p><strong>How should we go about trying to find this submarine?</strong></p>
+<p>Here are some guiding questions:</p>
 <ul>
-<li><a href="9_Conjugate_pairs_example.html">Binomial-beta pair</a></li>
-<li><a href="10_Informative_priors.html">Informative priors</a></li>
-<li><a href="11_Closing_basketball_example.html">Final remarks</a></li>
+<li>What are potential strategies that we could use?</li>
+<li>Can we write some equations describing the relevant probabilities in this problem?</li>
+<li>How can Bayes theorem be used to help us?</li>
 </ul>
-<ol start="2" style="list-style-type: decimal">
-<li><p><a href="12A_normal_normal_example.html">An example for the normal-normal conjugate pair</a></p></li>
-<li><p><a href="13_Priors_are_useful_cancer_example.html">Are priors useful? A cancer example</a></p></li>
-<li><p>Monte Carlo integration</p></li>
-</ol>
-<ul>
-<li><a href="14_Monte_Carlo_integration.html">MC1</a></li>
-<li><a href="15_Monte_Carlo_integration1.html">MC2</a></li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="16_intro_generative_model.html">Generative models and inverse modeling</a></p></li>
-<li><p><a href="17_FCDs.html">Full conditional distributions</a></p></li>
-<li><p><a href="18_gibbs_sampling.html">Gibbs sampling</a></p></li>
-</ol>
-<ul>
-<li><a href="20_MCMC_convergence.html">MCMC convergence</a></li>
-<li><a href="19_gibbs_sampling_example.html">Customized Gibbs sampler in R</a></li>
-<li><a href="19a_troubleshoot.html">Tips on troubleshooting your customized Gibbs sampler</a></li>
-<li><a href="21_JAGS.html">JAGS</a></li>
-<li><a href="22_Interesting_JAGs_example.html">Interesting JAGS example</a></li>
-</ul>
-<ol start="8" style="list-style-type: decimal">
-<li>Metropolis-Hastings algorithm</li>
-</ol>
-<ul>
-<li><a href="26_MH_algorithm.html">Motivation</a></li>
-<li><a href="27_MH_algorithm1.html">Description</a></li>
-<li><a href="28_MH_algorithm2.html">Example</a></li>
-<li><a href="29_MH_algorithm_Intuition.html">Intuition</a></li>
-</ul>
-<ol start="9" style="list-style-type: decimal">
-<li>Different sources of uncertainty and the predictive distribution</li>
-</ol>
-<ul>
-<li><a href="30_sources_of_uncertainty.html">Example of river pollutant</a> (datasets: <a href="river%20data.csv">“river data.csv”</a> and <a href="posterior%20distrib.csv">“posterior distrib.csv”</a>)</li>
-<li><a href="31_sources_of_uncertainty1.html">Extending the river pollutant example</a></li>
-<li><a href="31a_predictive_distribution_model_assump.html">Predictive distribution to check model assumptions</a></li>
-</ul>
+<p>To determine which strategy is quicker to find the submarine, we will rely on simulations. In each simulation we will randomly place the submarine in one sector and repeatedly employ the selected strategy until we either find the submarine or we reach a maximum number of attempts, after which we give up. I will distribute in class some code that might be useful as a starting point for this.</p>
+<p><br /> <br /></p>
+<p><a href="index.html">Back to main menu</a></p>
 </div>
-<div id="estimating-population-size" class="section level2">
-<h2>Estimating population size</h2>
-<ul>
-<li><a href="23_estimating_pop.html">Generative model and simulated data</a></li>
-<li><a href="23a_estimating_pop.html">Statistical model</a></li>
-<li><a href="23b_estimating_pop_JAGS.html">Fitting the model with JAGS</a></li>
-<li><a href="24%20estimating%20pop%20gibbs.pdf">Equations for our Gibbs sampler</a></li>
-<li><a href="25_estimating_pop_gibbs_R.html">Code for our Gibbs sampler</a></li>
-</ul>
+<div id="comments" class="section level2">
+<h2>Comments?</h2>
+<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
-<div id="robust-regression-model" class="section level2">
-<h2>Robust regression model</h2>
-<ul>
-<li><a href="32a_robust_regression.html">Robust regression</a></li>
-<li><a href="33%20robust%20regression%20FCDs.pdf">Equations for our Gibbs sampler</a></li>
-<li><a href="34_robust_regression_code.html">Code for our Gibbs sampler</a></li>
-</ul>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references">
+<div id="ref-barcena2019">
+<p>Barcena, M. J., M. A. Garin, A. Martin, F. Tusell, and A. Unzueta. 2019. “A Web Simulator to Assist in the Teaching of Bayes’ Theorem.” <em>Journal of Statistics Education</em> 27: 68–78.</p>
 </div>
-<div id="models-with-latent-continuous-variables" class="section level2">
-<h2>Models with latent continuous variables</h2>
-<p><a href="35_latent_cr_intro.html">Introduction</a></p>
-<p><a href="35a%20FCDs%20for%20betas.pdf">FCDs for regression parameters</a></p>
-<p>Model for left censored data</p>
-<ul>
-<li><a href="36_latent_cr_detection_model.html">Detection limit model</a></li>
-<li><a href="38_latent_cr_detection_code.html">FCDs and code for our Gibbs sampler</a></li>
-<li><a href="38a_latent_cr_detection_code_JAGS.html">Modeling left censored data using JAGS</a></li>
-</ul>
-<p>Probit regression model</p>
-<ul>
-<li><a href="39_probit_model.html">Introduction to the probit regression model</a></li>
-<li><a href="40_probit_zi_and_code.html">FCDs and code for the probit regression model</a></li>
-</ul>
 </div>
-<div id="mixed-models" class="section level2">
-<h2>Mixed models</h2>
-<ul>
-<li><a href="41_mixed_models.html">Introduction to mixed models</a></li>
-<li><a href="43_mixed_models_shrinkage.html">Shrinkage</a></li>
-<li><a href="44_Mixed_model_fake_data_and_JAGS_code.html">Mixed model JAGS code</a> (dataset: <a href="radon%20data%20gelman_hill.csv">radon data gelman_hill.csv</a>)</li>
-<li><a href="45_Mixed_vs_fixed_effect_model.html">Mixed vs fixed effect models</a></li>
-</ul>
-</div>
-<div id="modeling-spatial-and-temporal-correlation" class="section level2">
-<h2>Modeling spatial and temporal correlation</h2>
-<ul>
-<li><a href="46_space_time_correlation.html">Introduction to modeling spatial and temporal correlation</a></li>
-<li><a href="47_ST_correlation_fake_data_JAGs.html">Simulating data and fitting the AR-1 model using JAGS</a></li>
-<li><a href="48_ST_correlation_comparison.html">Why bother modeling temporal correlation? Comparing results from the AR-1 model and simple linear regression</a></li>
-</ul>
-</div>
-<div id="common-problems-in-jags-and-other-mcmc-algorithms" class="section level2">
-<h2>Common problems in JAGS (and other MCMC algorithms)</h2>
-<ul>
-<li><a href="100_jags_problems_init_values.html">Bad initial values</a></li>
-<li><a href="101_jags_problems_identif.html">Unidentifiable parameters</a></li>
-<li><a href="102_ones_trick.html">Speeding up MCMC algorithms</a></li>
-</ul>
-</div>
-<div id="miscellanea" class="section level2">
-<h2>Miscellanea</h2>
-<ol style="list-style-type: decimal">
-<li><p><a href="6_Big_sum_and_big_product.html">Big sum and big product notation</a></p></li>
-<li><p><a href="6a_Proportional_notation.html">“Proportional to” notation</a></p></li>
-<li><p><a href="rnorm_vs_dnorm.html">Difference between “dnorm” and “rnorm”</a></p></li>
-<li><p><a href="10a_Review_of_math_facts.html">Basic math facts</a></p></li>
-<li><p><a href="12_normal_normal_derivation.pdf">Derivation of normal-normal conjugate pair</a></p></li>
-<li><p><a href="9a_deducing_posterior.html">Why can we deduce the posterior distribution just by knowing <span class="math inline">\(p(\pi|X)\)</span> up to a proportionality constant?</a></p></li>
-</ol>
 </div>
 </article>
 </div>
