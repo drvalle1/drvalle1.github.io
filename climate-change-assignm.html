@@ -13,7 +13,7 @@
 
 
 
-<title>disease-prediction.utf8</title>
+<title>climate-change-assignm.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -244,97 +244,6 @@ $l.bootstrap=Uc;}}bm();
 </script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
-/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
-a.sourceLine {
-  pointer-events: auto;
-}
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -366,7 +275,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Disease prediction example
+Climate change example
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -389,73 +298,20 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<div id="rationale" class="section level2">
-<h2>Rationale</h2>
-<p>A common task in many health facilities around the world is to diagnose individuals based on their symptoms. Even if more advanced disease-specific diagnostic methods (e.g., polymerase chain reaction [PCR]) are available, these might be expensive and time consuming. As a result, ideally one would first triage patients so that these diagnostic methods (if they are available) are only used for patients with a relatively high probability of having the suspected disease.</p>
-<p>To help with this task, our goal is to create a predictive model that outputs the probability of the person having a particular disease based on his/her symptoms.</p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>In class, we analyzed the “<a href="climate%20change%20data%20edited.csv">climate change data edited.csv</a>” dataset using the following model:</p>
+<p><span class="math display">\[p(\mu|...)\propto [\prod_i  N(x_i|\mu,\sigma^2)]\times N(\mu|m_0,v_0^2)\]</span> In this model, we assumed that all observations have the same amount of measurement error (given by <span class="math inline">\(\sigma^2\)</span>) and that we knew what <span class="math inline">\(\sigma^2\)</span> was. However, different proxies clearly have different levels of measurement error. Indeed, in the dataset, this corresponds to the column “sdev”.</p>
 </div>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>We will be using real data collected at health facilities in Ghana: <a href="disease%20prediction%20data.csv">“disease prediction data.csv”</a>. All of the variables in this dataset are binary, where 0 and 1 indicate absence and presence, respectively. Here is how these data look like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">example naive bayes&#39;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2">dat=<span class="kw">read.csv</span>(<span class="st">&#39;disease prediction data.csv&#39;</span>,<span class="dt">as.is=</span>T)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">head</span>(dat)</a></code></pre></div>
-<pre><code>##   FEVER MYAL ANOR JPAIN CHILL HACH NSEA VOMIT DIRHEA COUGH DIZY SORE CONUL JAUN
-## 1     1   NA    1    NA     1    0    0     0      0     1   NA    0     0    0
-## 2     1    1    1     1     1    1    1     1      0     0    0    0     0    0
-## 3     1    0    1     0     0   NA    0     0      0     0    0    0     0    0
-## 4     1    0    1     0     1    0    0     0      0     1    0    0     0    0
-## 5     1    0    1     0     1    0    0     0      0     0    0    0     0    0
-## 6     1    0    1     0     1    0    0     0      0     1    0    0     0    0
-##   SKINR PCR
-## 1     0   0
-## 2     0   0
-## 3     0   0
-## 4     0   0
-## 5     0   0
-## 6     0   1</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#look at response variable</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">table</span>(dat<span class="op">$</span>PCR)</a></code></pre></div>
-<pre><code>## 
-##   0   1 
-## 119  62</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co">#look at missing data pattern for people with disease</span></a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="kw">apply</span>(<span class="kw">is.na</span>(dat[dat<span class="op">$</span>PCR<span class="op">==</span><span class="dv">1</span>,]),<span class="dv">2</span>,mean)</a></code></pre></div>
-<pre><code>##      FEVER       MYAL       ANOR      JPAIN      CHILL       HACH       NSEA 
-## 0.00000000 0.17741935 0.00000000 0.16129032 0.01612903 0.01612903 0.00000000 
-##      VOMIT     DIRHEA      COUGH       DIZY       SORE      CONUL       JAUN 
-## 0.00000000 0.01612903 0.03225806 0.04838710 0.03225806 0.01612903 0.01612903 
-##      SKINR        PCR 
-## 0.00000000 0.00000000</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co">#how much data would we loose if we eliminated all rows with missing data? About 17%</span></a>
-<a class="sourceLine" id="cb7-2" title="2">tmp=<span class="kw">apply</span>(<span class="kw">is.na</span>(dat[dat<span class="op">$</span>PCR<span class="op">==</span><span class="dv">1</span>,]),<span class="dv">1</span>,sum)</a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="kw">mean</span>(tmp<span class="op">&gt;</span><span class="dv">0</span>)</a></code></pre></div>
-<pre><code>## [1] 0.1774194</code></pre>
-<p>We wan to create a model where the response variable is PCR and the predictor variables are the binary symptoms. However, as you can see, this dataset has a lot of missing symptom data. As a result, unless we want to discard a large fraction of our data (approx. 17%) by analysing just the rows without missing data, we cannot fit a standard logistic regression.</p>
-</div>
-<div id="naive-bayes-model" class="section level2">
-<h2>Naive Bayes model</h2>
-<p>We will rely on a relatively simple model called Naive Bayes to deal with the problem of missing predictor variables. Here is how this model works.</p>
-<p>Let <span class="math inline">\(s_{i1}\)</span> and <span class="math inline">\(s_{i2}\)</span> denote symptoms 1 and 2 for individual <span class="math inline">\(i\)</span>. Furthermore, let <span class="math inline">\(d_{i}\)</span> denote the disease status of this individual. We are interested in:</p>
-<p><span class="math display">\[p(d_i=1|s_{i1},s_{i2})=\frac{p(s_{i1},s_{i2}|d_i=1)p(d_i=1)}{p(s_{i1},s_{i2})}=\frac{p(s_{i1},s_{i2}|d_i=1)p(d_i=1)}{p(s_{i1},s_{i2}|d_i=0)p(d_i=0)+p(s_{i1},s_{i2}|d_i=1)p(d_i=1)}\]</span></p>
-<p>The key assumption of the Naive Bayes model is that, given disease status, the symptoms are independent.</p>
-<ol style="list-style-type: decimal">
-<li><p>How does the above expression change if we assume that symptoms are independent given disease status?</p></li>
-<li><p>Why is this independence assumption useful when we have missing predictor variables? To answer this question, it is useful to think about how our equation changes if we assume that data for symptom <span class="math inline">\(s_{i1}\)</span> (for example) is missing.</p></li>
-</ol>
-</div>
-<div id="how-do-we-fit-this-naive-bayes-model" class="section level2">
-<h2>How do we fit this Naive Bayes model?</h2>
-<p>Based on the data that we have, how do we estimate the different pieces of information that we need to be able to calculate <span class="math inline">\(p(d_i=1|s_{i1},s_{i2})\)</span>?</p>
-<p>What would be reasonable models to estimate the following parameters? <span class="math display">\[p(s_{i1}=1|d_i=1)=\pi_{11}\]</span> <span class="math display">\[p(s_{i2}=1|d_i=1)=\pi_{21}\]</span> <span class="math display">\[p(s_{i1}=1|d_i=0)=\pi_{10}\]</span> <span class="math display">\[p(s_{i2}=1|d_i=0)=\pi_{20}\]</span></p>
-<p>Would it be useful to use informative priors here? Why?</p>
-<p>Ultimately, I would like you to create a function that outputs <span class="math inline">\(p(d_i=1|s_{i1},...,s_{ip})\)</span> based on the following arguments:</p>
+<div id="how-can-we-model-these-data-more-appropriately-by-taking-into-account-that-each-proxy-has-its-own-measurement-error" class="section level2">
+<h2>How can we model these data more appropriately by taking into account that each proxy has it’s own measurement error?</h2>
+<p>Here are some guiding questions:</p>
 <ul>
-<li>a vector with the symptoms, some of which might be missing, and</li>
-<li>the estimated parameters</li>
+<li>How do we modify the expression above to acknowledge that measurement error may vary for each proxy?</li>
+<li>As a consequence, how does our expression for the posterior distribution of <span class="math inline">\(\mu\)</span> (i.e., <span class="math inline">\(p(\mu|...)\)</span>) change?</li>
+<li>What is the expression for the mean of the posterior distribution? Does this expression make intuitive sense?</li>
+<li>Draw the posterior distribution. How does this posterior distribution change as we change the prior variance <span class="math inline">\(v_0^2\)</span>? Does this make sense?</li>
 </ul>
-<p>To avoid making things too complicated, we can focus just on 3 symptoms: fever (“FEVER”), joint pain (“JPAIN”), and cough (“COUGH”).</p>
-<p><br /> <br /></p>
 <p><a href="index.html">Back to main menu</a></p>
 <div id="comments" class="section level3">
 <h3>Comments?</h3>
