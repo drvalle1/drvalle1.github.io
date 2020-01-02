@@ -13,7 +13,7 @@
 
 
 
-<title>23-estimating-pop.utf8</title>
+<title>celebrity-age-assignm.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -244,97 +244,6 @@ $l.bootstrap=Uc;}}bm();
 </script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
-/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
-a.sourceLine {
-  pointer-events: auto;
-}
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -366,7 +275,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Estimating population size using mark-recapture data
+Celebrity age example
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -389,57 +298,24 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<div id="generative-model" class="section level2">
-<h2>Generative model</h2>
-<p>In this example, we are interested in estimating population size of a wildlife species using mark-recapture data. We collect these data by going into the field multiple times, during which we capture individuals and put tags with unique identifiers in them. As a result, we might retrieve individuals that had already been tagged before and/or get completely new individuals in these surveys. The key assumptions here are that:</p>
-<ol style="list-style-type: decimal">
-<li><p>We need to be able to individually recognize each animal and thus be able to have repeated observations on each individual. These data historically arouse from capturing animals and uniquely marking them in the first encounter and then trying to recapture them in subsequent surveys. This explains why we use the term “capture-recapture” but it is important to note that uniquely identifying each individual might not require physical capture <span class="citation">(Kery and Schaub 2012)</span>. For example, we might be able to identify individuals from photographs, based on their unique scars or fur patterns, from camera traps.</p></li>
-<li><p>These different surveys need to be close enough in time so that we can assume that the same set of individuals is avaiable throughout these surveys (i.e., individuals have not moved in or out of the study region, individuals have not died, and new individuals have not been born).</p></li>
-</ol>
-<p>Under these assumptions, we start by assuming that the true population size is N. Let <span class="math inline">\(D_{it}\)</span> be a binary variable indicating if animal i (i=1,…,N) was observed at survey t (t=1,…,T). Assuming detection probability of <span class="math inline">\(\delta\)</span>, our model is given by:</p>
-<p><span class="math display">\[D_{it} \sim Bernoulli(\delta)\]</span></p>
-<p>Obviously this is a very simple model in the sense that we assume that detection probability <span class="math inline">\(\delta\)</span> does not depend on the individual animal characteristics (e.g., perhaps older individuals are easier to find) and does not change with time or with capture history (e.g., individuals do not become trap happy or trap shy).</p>
+<div id="rationale" class="section level2">
+<h2>Rationale</h2>
+<p>Our goal is to estimate a parameter that describes the ability of a particular person in estimating the age of celebrities. We will assume the following model:</p>
+<p><span class="math display">\[p(\mu,\sigma^2|...)\propto [\prod_i N(x_i|\mu,\sigma^2)]\times N(\mu |\mu_0,\sigma_0^2)Gamma(\frac{1}{\sigma^2}|a,b) \]</span> where the observation <span class="math inline">\(x_i\)</span> is the difference between the provided age and the true age of celebrity <span class="math inline">\(i\)</span>. Somebody that is really good in this task should have <span class="math inline">\(\mu \approx 0\)</span> (i.e., unbiased estimates of age) and small <span class="math inline">\(\sigma^2\)</span> (i.e., little variability in <span class="math inline">\(x_i\)</span>).</p>
 </div>
-<div id="simulating-data" class="section level2">
-<h2>Simulating data</h2>
-<p>Here is how we generate some simulated data:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#generate some fake data</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>(<span class="dt">all=</span>T))</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">set.seed</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="co">#true parameter values</span></a>
-<a class="sourceLine" id="cb1-6" title="6">delta.true=delta=<span class="fl">0.3</span></a>
-<a class="sourceLine" id="cb1-7" title="7">N=<span class="dv">200</span> <span class="co">#true population size</span></a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="co">#number of surveys </span></a>
-<a class="sourceLine" id="cb1-10" title="10">T1=<span class="dv">4</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="co">#observation status of each individual</span></a>
-<a class="sourceLine" id="cb1-12" title="12">D1=<span class="kw">matrix</span>(<span class="dv">0</span>,N,T1)</a>
-<a class="sourceLine" id="cb1-13" title="13"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>T1){</a>
-<a class="sourceLine" id="cb1-14" title="14">  D1[,i]=<span class="kw">rbinom</span>(N,<span class="dt">size=</span><span class="dv">1</span>,<span class="dt">p=</span>delta)</a>
-<a class="sourceLine" id="cb1-15" title="15">}</a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#In the real dataset, we never observe individuals with 0 detections</span></a>
-<a class="sourceLine" id="cb1-18" title="18"><span class="co">#Therefore, we need to remove these individuals from our dataset</span></a>
-<a class="sourceLine" id="cb1-19" title="19">cond=<span class="kw">apply</span>(D1,<span class="dv">1</span>,sum)<span class="op">!=</span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb1-20" title="20">data1=D1[cond,]</a>
-<a class="sourceLine" id="cb1-21" title="21"><span class="kw">nrow</span>(data1) <span class="co">#number of individuals we get to observe at least once. Notice how this is less than N.</span></a></code></pre></div>
-<pre><code>## [1] 153</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">2018</span><span class="ch">\\</span><span class="st">chapter7&#39;</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">write.csv</span>(data1,<span class="st">&#39;simulated data popsize.csv&#39;</span>,<span class="dt">row.names=</span>F)</a></code></pre></div>
+<div id="steps" class="section level2">
+<h2>Steps</h2>
+<ol style="list-style-type: decimal">
+<li>We need to define our prior parameters: <span class="math inline">\(\mu_0\)</span>,<span class="math inline">\(\sigma_0^2\)</span>,<span class="math inline">\(a\)</span>,<span class="math inline">\(b\)</span>. How should we do this?<br />
+</li>
+<li>We will “collect” some data</li>
+<li>We will create our own customized Gibbs sampler from scratch using R</li>
+</ol>
 <p><br /> <br /></p>
 <p><a href="index.html">Back to main menu</a></p>
-</div>
-<div id="comments" class="section level2">
-<h2>Comments?</h2>
+<div id="comments" class="section level3">
+<h3>Comments?</h3>
 <p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
-</div>
-<div id="references" class="section level2 unnumbered">
-<h2>References</h2>
-<div id="refs" class="references">
-<div id="ref-keryandschaub">
-<p>Kery, M., and M. Schaub. 2012. <em>Bayesian Population Analysis Using Winbugs: A Hierarchical Perspective</em>. Elsevier.</p>
-</div>
 </div>
 </div>
 </article>
