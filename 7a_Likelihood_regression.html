@@ -298,12 +298,15 @@ body{ /* Normal  */
   }
 }
 </style>
-<p>##Definition</p>
+<div id="definition" class="section level2">
+<h2>Definition</h2>
 <p>Very similar ideas apply when we have covariates and we want to specify the likelihood function for a regression model. In this case, the likelihood function is a function of the vector of parameters <span class="math inline">\(\theta\)</span> and is equal to the probability of the data <span class="math inline">\(y_1,...,y_n\)</span> given the vector of parameters <span class="math inline">\(\theta\)</span> and covariate vectors <span class="math inline">\(x_1,...,x_n\)</span>:</p>
 <p><span class="math display">\[L(\theta) = p(y_1,...,y_n|\theta,x_1,...,x_n)\]</span></p>
 <p>Again, as a simplifying assumption, often times people assume that observations are conditionally independent given model parameters and covariates, which implies that we can write the likelihood as:</p>
 <p><span class="math display">\[L(\theta) = \prod_{i=1}^{n} p(y_i|\theta,x_i)\]</span></p>
-<p>##Choosing a probability distribution for the likelihood</p>
+</div>
+<div id="choosing-a-probability-distribution-for-the-likelihood" class="section level2">
+<h2>Choosing a probability distribution for the likelihood</h2>
 <p>The next step is choosing specific probability distributions to represent each term <span class="math inline">\(p(y_i|\theta,x_i)\)</span> of the likelihood. Differently from our earlier examples, we will have to modify the probability distributions that we saw previously to accommodate our covariates. Nevertheless, the choice of which probability distribution to use still depends on the characteristics of the data.</p>
 <p><strong>Key aspects regarding all the examples below are that</strong></p>
 <ul>
@@ -311,6 +314,7 @@ body{ /* Normal  */
 <li><p><strong>we need to know how these parameters are related to the moments of these distributions (e.g., mean).</strong></p></li>
 </ul>
 <p><br /></p>
+</div>
 <div id="normal-distribution" class="section level2">
 <h2>1) Normal distribution</h2>
 <p>If <span class="math inline">\(y_i\)</span> is a real number, then the Normal distribution is commonly used, yielding the following likelihood:</p>
