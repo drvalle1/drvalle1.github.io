@@ -307,7 +307,13 @@ body{ /* Normal  */
 <p><span class="math display">\[p(\mu|...)\propto [\prod_i  N(x_i|\mu,\sigma^2)]\times N(\mu|m_0,v_0^2)\]</span> In class, we assumed that all observations have the same amount of measurement error (given by <span class="math inline">\(\sigma^2\)</span>) and that we knew what <span class="math inline">\(\sigma^2\)</span> was.</p>
 <p>In this exercise, the goal is to create a Gibbs sampler to not only estimate <span class="math inline">\(\mu\)</span> but also to estimate <span class="math inline">\(\sigma^2\)</span>. As a result, we will need a prior for <span class="math inline">\(\frac{1}{\sigma^2}\)</span>, which we will assume to be a Gamma distribution. Therefore, our full model is given by:</p>
 <p><span class="math display">\[p(\mu,\sigma^2|...)\propto [\prod_i  N(x_i|\mu,\sigma^2)]\times N(\mu|m_0,v_0^2)Gamma(\frac{1}{\sigma^2}|a,b)\]</span></p>
-<p>Here are the steps to estimate these two parameters: 1) Determine the FCD’s for <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>. 2) Create a function in R to sample <span class="math inline">\(\mu\)</span> from its FCD 3) Create a function in R to sample <span class="math inline">\(\sigma^2\)</span> from its FCD 4) Develop your Gibbs sampler</p>
+<p>Here are the steps to estimate these two parameters:</p>
+<ol style="list-style-type: decimal">
+<li>Determine the FCD’s for <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>.</li>
+<li>Create a function in R to sample <span class="math inline">\(\mu\)</span> from its FCD</li>
+<li>Create a function in R to sample <span class="math inline">\(\sigma^2\)</span> from its FCD</li>
+<li>Develop your Gibbs sampler</li>
+</ol>
 </div>
 <div id="how-can-we-take-into-account-that-each-proxy-has-its-own-measurement-error" class="section level2">
 <h2>How can we take into account that each proxy has it’s own measurement error?</h2>
