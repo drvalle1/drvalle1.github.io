@@ -13,7 +13,7 @@
 
 
 
-<title>index.utf8</title>
+<title>convergence_problems.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -247,6 +247,97 @@ vm.bootstrap=bd;}}xm();
 </script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -278,7 +369,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Introduction Bayesian Statistics Applied to Life Sciences
+Example of convergence problem with a mixture model
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -301,100 +392,219 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<p>This website contains part of the material I use for the semester-long course “Introduction to Bayesian statistics applied to life sciences” that I teach at Univ. of Florida. This course is geared towards students that have not been formally trained as statisticians and therefore it does not rely on linear algebra or advanced calculus. However, this material will require some understanding of basic calculus concepts and distribution theory as well as good grasp of programming.</p>
-<p>Observation: I am still putting this website together so some of the material is not posted yet and there might be some rough edges. If you have any suggestions or comments, feel free to contact me (drvalle at ufl dot edu).</p>
-<div id="intro-material" class="section level2">
-<h2>Intro material</h2>
-<ol start="0" style="list-style-type: decimal">
-<li><p><a href="0_Approach_to_teaching_Bayes.html">Approach to teaching to Bayes</a></p></li>
-<li><p><a href="1_Introduction_to_Bayes.html">Introduction to Bayes</a></p></li>
-<li><p><a href="2_Probabilities_Example_death_penalty.html">Probabilities: a quick example on death penalty</a></p></li>
-<li><p><a href="3_Probability_rules.html">Probability rules</a></p></li>
-<li><p><a href="4_Bayes_theorem.html">Bayes theorem</a></p></li>
-</ol>
-<ul>
-<li><a href="submarine-example.html">Submarine example</a></li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="8B_PMF_and_PDF.html">Quick overview of PMFs and PDFs</a></p></li>
-<li><p>The likelihood function</p></li>
-</ol>
-<ul>
-<li><a href="7_Likelihood.html">Likelihood for simple models</a></li>
-<li><a href="7a_Likelihood_regression.html">Likelihood for regression models</a></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>Maximum likelihood estimation (MLE)</li>
-</ol>
-<ul>
-<li><a href="8_MLE.html">Basic ideas</a></li>
-<li><a href="biomass-recovery-assignm.html">Biomass recovery example</a></li>
-</ul>
+<div id="example-of-convergence-problem-mixture-model" class="section level2">
+<h2>Example of convergence problem: mixture model</h2>
+<p>Here we illustrate convergence problems that may arise due to identifiability issues. To do this, we rely on a class of models that are known as mixture models. In the particular model that we will use, data are assumed to arise from one of two distributions, both of which are normal distributions with variance of 1 but different means. Here is the model:</p>
+<p><span class="math display">\[z_i\sim Bernoulli(\pi)\]</span> <span class="math display">\[x_i|z_i=0 \sim N(\mu_0,1)\]</span> <span class="math display">\[x_i|z_i=1 \sim N(\mu_1,1)\]</span></p>
+<p>In this model, <span class="math inline">\(z_i\)</span> is a latent (unobserved) variable and we only get to observe <span class="math inline">\(x_i\)</span>, the end product of this process. Here is how we generate these data in R:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>(<span class="dt">all=</span><span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">set.seed</span>(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(jagsUI)</a></code></pre></div>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## 
+## Attaching package: &#39;jagsUI&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:utils&#39;:
+## 
+##     View</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co">#generate simulated data</span></a>
+<a class="sourceLine" id="cb5-2" title="2">nobs=<span class="dv">1000</span></a>
+<a class="sourceLine" id="cb5-3" title="3">pi1=<span class="fl">0.2</span></a>
+<a class="sourceLine" id="cb5-4" title="4">z=<span class="kw">rbinom</span>(nobs,<span class="dt">size=</span><span class="dv">1</span>,<span class="dt">prob=</span>pi1)</a>
+<a class="sourceLine" id="cb5-5" title="5">mu0=<span class="dv">1</span>; mu1=<span class="dv">10</span></a>
+<a class="sourceLine" id="cb5-6" title="6">x=<span class="kw">ifelse</span>(z<span class="op">==</span><span class="dv">1</span>,<span class="kw">rnorm</span>(nobs,<span class="dt">mean=</span>mu1,<span class="dt">sd=</span><span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb5-7" title="7">         <span class="kw">rnorm</span>(nobs,<span class="dt">mean=</span>mu0,<span class="dt">sd=</span><span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb5-8" title="8"></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co">#here is how these data look like</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="kw">plot</span>(<span class="kw">density</span>(x),<span class="dt">type=</span><span class="st">&#39;l&#39;</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>These data have 2 bumps, which are essentially scaled versions of the two normal distributions that are used to draw the data. Mixture models like this are commonly used when one suspects that there are two or more subpopulations and we want to characterize each subpopulation despite the fact that we do not know which observation came from which subpopulation. For example, we could have height data both for men and women. In the absence of gender information associated with each height observation, we might only see these two bumps.</p>
 </div>
-<div id="basics-of-bayes" class="section level2">
-<h2>Basics of Bayes</h2>
-<ol style="list-style-type: decimal">
-<li>Conjugate likelihood-prior pairs: a basketball example</li>
-</ol>
+<div id="estimating-parameters-using-jags" class="section level2">
+<h2>Estimating parameters using JAGS</h2>
+<p>The parameters that we want to estimate in this model are:</p>
 <ul>
-<li><a href="9_Conjugate_pairs_example.html">Binomial-beta pair</a></li>
-<li><a href="10_Informative_priors.html">Informative priors</a></li>
-<li><a href="11_Closing_basketball_example.html">Final remarks</a></li>
-<li><a href="cancer-example.html">Cancer example</a></li>
+<li><span class="math inline">\(\pi\)</span>: the proportion of observations that come from each distribution;</li>
+<li><span class="math inline">\(\mu_0\)</span>: the mean of one of the normal distributions</li>
+<li><span class="math inline">\(\mu_1\)</span>: the mean of the other normal distribution</li>
 </ul>
-<ol start="2" style="list-style-type: decimal">
-<li><a href="12A_normal_normal_example.html">An example for the normal-normal conjugate pair</a></li>
-</ol>
-<ul>
-<li><a href="climate-change-assignm.html">Climate change example</a></li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Monte Carlo integration</li>
-</ol>
-<ul>
-<li><a href="14_Monte_Carlo_integration.html">MC1</a></li>
-<li><a href="15_Monte_Carlo_integration1.html">MC2</a></li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p><a href="16_intro_generative_model.html">Generative models and inverse modeling</a></p></li>
-<li><p><a href="17_FCDs.html">Full conditional distributions</a></p></li>
-<li><p><a href="18_gibbs_sampling.html">Gibbs sampling</a></p></li>
-</ol>
-<ul>
-<li><a href="20_MCMC_convergence.html">MCMC convergence</a></li>
-<li><a href="convergence_problems.html">MCMC lack of convergence</a></li>
-<li><a href="19_gibbs_sampling_example.html">Customized Gibbs sampler in R</a></li>
-<li><a href="19a_troubleshoot.html">Tips on troubleshooting your customized Gibbs sampler</a></li>
-<li><a href="21_JAGS.html">JAGS</a></li>
-<li><a href="22_Interesting_JAGs_example.html">Interesting JAGS example</a></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>Metropolis-Hastings algorithm</li>
-</ol>
-<ul>
-<li><a href="26_MH_algorithm.html">Motivation</a></li>
-<li><a href="27_MH_algorithm1.html">Algorithm</a></li>
-<li><a href="29_MH_algorithm_Intuition.html">Intuition</a></li>
-</ul>
+<p>Our JAGS model is given in the file “mixture_model.R”. The content of this file is given below:</p>
+<pre><code>model{
+  for (i in 1:N){
+    z[i]~dbinom(pi,1)
+    mu[i] &lt;- z[i]*mu1+(1-z[i])*mu0
+    x[i]~dnorm(mu[i],1)
+  }
+  mu0 ~ dnorm(0,1/100)
+  mu1 ~ dnorm(0,1/100)
+  pi ~ dbeta(1,1)
+}</code></pre>
+<p>To fit this model, we will rely on the following code:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># MCMC settings </span></a>
+<a class="sourceLine" id="cb7-2" title="2">ni &lt;-<span class="st"> </span><span class="dv">1500</span> <span class="co">#number of iterations</span></a>
+<a class="sourceLine" id="cb7-3" title="3">nt &lt;-<span class="st"> </span><span class="dv">10</span>    <span class="co">#interval to thin </span></a>
+<a class="sourceLine" id="cb7-4" title="4">nb &lt;-<span class="st"> </span><span class="dv">1000</span>  <span class="co">#number of iterations to discard as burn-in</span></a>
+<a class="sourceLine" id="cb7-5" title="5">nc &lt;-<span class="st"> </span><span class="dv">5</span>     <span class="co">#number of chains</span></a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co">#set parameters to monitor</span></a>
+<a class="sourceLine" id="cb7-8" title="8">params=<span class="kw">c</span>(<span class="st">&quot;mu1&quot;</span>,<span class="st">&quot;mu0&quot;</span>,<span class="st">&quot;pi&quot;</span>)</a>
+<a class="sourceLine" id="cb7-9" title="9"></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="co">#run model</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="kw">setwd</span>(<span class="st">&#39;U:/uf/courses/bayesian course/convergence1&#39;</span>)</a>
+<a class="sourceLine" id="cb7-12" title="12">model2=<span class="kw">jags</span>(<span class="dt">model.file=</span><span class="st">&quot;mixture_model.R&quot;</span>,</a>
+<a class="sourceLine" id="cb7-13" title="13">            <span class="dt">parameters.to.save=</span>params,<span class="dt">data=</span><span class="kw">list</span>(<span class="dt">x=</span>x,<span class="dt">N=</span><span class="kw">length</span>(x)),<span class="dt">n.chains=</span>nc,</a>
+<a class="sourceLine" id="cb7-14" title="14">            <span class="dt">n.burnin=</span>nb,<span class="dt">n.iter=</span>ni,<span class="dt">n.thin=</span>nt,<span class="dt">DIC=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## 
+## Processing function input....... 
+## 
+## Done. 
+##  
+## Compiling model graph
+##    Resolving undeclared variables
+##    Allocating nodes
+## Graph information:
+##    Observed stochastic nodes: 1000
+##    Unobserved stochastic nodes: 1003
+##    Total graph size: 6008
+## 
+## Initializing model
+## 
+## Adaptive phase..... 
+## Adaptive phase complete 
+##  
+## 
+##  Burn-in phase, 1000 iterations x 5 chains 
+##  
+## 
+## Sampling from joint posterior, 500 iterations x 5 chains 
+##  
+## 
+## Calculating statistics....... 
+## 
+## Done.</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">model2</a></code></pre></div>
+<pre><code>## JAGS output for model &#39;mixture_model.R&#39;, generated by jagsUI.
+## Estimates based on 5 chains of 1500 iterations,
+## adaptation = 100 iterations (sufficient),
+## burn-in = 1000 iterations and thin rate = 10,
+## yielding 250 total samples from the joint posterior. 
+## MCMC ran for 0.173 minutes at time 2020-02-05 14:21:32.
+## 
+##              mean    sd     2.5%      50%    97.5% overlap0 f    Rhat n.eff
+## mu1         8.180 3.610    0.942    9.953   10.119    FALSE 1  75.654     5
+## mu0         2.781 3.616    0.909    0.986   10.094    FALSE 1 113.514     5
+## pi          0.328 0.227    0.192    0.219    0.795    FALSE 1  24.941     5
+## deviance 2807.366 2.332 2805.206 2806.475 2814.021    FALSE 1   1.016   213
+## 
+## **WARNING** Rhat values indicate convergence failure. 
+## Rhat is the potential scale reduction factor (at convergence, Rhat=1). 
+## For each parameter, n.eff is a crude measure of effective sample size. 
+## 
+## overlap0 checks if 0 falls in the parameter&#39;s 95% credible interval.
+## f is the proportion of the posterior with the same sign as the mean;
+## i.e., our confidence that the parameter is positive or negative.
+## 
+## DIC info: (pD = var(deviance)/2) 
+## pD = 2.7 and DIC = 2810.078 
+## DIC is an estimate of expected predictive error (lower is better).</code></pre>
+<p>The “Rhat” values look horrible, suggesting that the model has not converged. We could try to run the algorithm for a larger number of iterations to see if this helps with convergence but I believe this would not solve our problem.</p>
+<p>To investigate further what might be happening, I show the traceplot for <span class="math inline">\(\mu_0\)</span> and <span class="math inline">\(\mu_1\)</span>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">mu1=model2<span class="op">$</span>sims.list<span class="op">$</span>mu1</a>
+<a class="sourceLine" id="cb11-2" title="2">mu0=model2<span class="op">$</span>sims.list<span class="op">$</span>mu0</a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="kw">plot</span>(mu1,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">plot</span>(mu0,<span class="dt">type=</span><span class="st">&#39;l&#39;</span>)</a></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>The main problem with this model is that <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_0\)</span> are not identifiable. As a result, in one chain, our algorithm might associate <span class="math inline">\(\mu_0\)</span> with the left distribution whereas in another chain, JAGS might associate <span class="math inline">\(\mu_0\)</span> with the right distribution. This is reflected in the traceplots. We ran 5 chains and each chain contributes with <span class="math inline">\(\frac{1500-1000}{10}=50\)</span> samples. The traceplots combine these 50 samples from each chain and, for this reason, we see these big jumps in parameter values in iterations that are multiple of 50.</p>
 </div>
-<div id="common-problems-in-jags-and-other-mcmc-algorithms" class="section level2">
-<h2>Common problems in JAGS (and other MCMC algorithms)</h2>
-<ul>
-<li><a href="100_jags_problems_init_values.html">Bad initial values</a></li>
-<li><a href="101_jags_problems_identif.html">Unidentifiable parameters</a></li>
-<li><a href="102_ones_trick.html">Speeding up MCMC algorithms</a></li>
-</ul>
+<div id="estimating-parameters-using-a-reparameterized-model" class="section level2">
+<h2>Estimating parameters using a reparameterized model</h2>
+<p>To solve this problem, we would have to reformulate our model so that <span class="math inline">\(\mu_0\)</span> always corresponds to the left distribution. Here is one way of doing this by reparameterizing <span class="math inline">\(\mu_1\)</span> as <span class="math inline">\(\mu_0 + \theta\)</span> where <span class="math inline">\(\theta\)</span> is restricted to be a positive real number. Here is the JAGS model (in file “mixture_model_reparam.R”) under this new parameterization:</p>
+<pre><code>model{
+  for (i in 1:N){
+    z[i]~dbinom(pi,1)
+    mu[i] &lt;- z[i]*mu1+(1-z[i])*mu0
+    x[i]~dnorm(mu[i],1)
+  }
+  mu1 &lt;- mu0+theta
+  theta ~ dunif(0,100)
+  mu0 ~ dnorm(0,1/100)
+  pi ~ dbeta(1,1)
+}</code></pre>
+<p>Let’s see if this helps with convergence:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># MCMC settings </span></a>
+<a class="sourceLine" id="cb14-2" title="2">ni &lt;-<span class="st"> </span><span class="dv">1500</span> <span class="co">#number of iterations</span></a>
+<a class="sourceLine" id="cb14-3" title="3">nt &lt;-<span class="st"> </span><span class="dv">10</span>    <span class="co">#interval to thin </span></a>
+<a class="sourceLine" id="cb14-4" title="4">nb &lt;-<span class="st"> </span><span class="dv">1000</span>  <span class="co">#number of iterations to discard as burn-in</span></a>
+<a class="sourceLine" id="cb14-5" title="5">nc &lt;-<span class="st"> </span><span class="dv">5</span>     <span class="co">#number of chains</span></a>
+<a class="sourceLine" id="cb14-6" title="6"></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="co">#set parameters to monitor</span></a>
+<a class="sourceLine" id="cb14-8" title="8">params=<span class="kw">c</span>(<span class="st">&quot;mu0&quot;</span>,<span class="st">&quot;theta&quot;</span>,<span class="st">&quot;pi&quot;</span>)</a>
+<a class="sourceLine" id="cb14-9" title="9"></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="co">#run model</span></a>
+<a class="sourceLine" id="cb14-11" title="11"><span class="kw">setwd</span>(<span class="st">&#39;U:/uf/courses/bayesian course/convergence1&#39;</span>)</a>
+<a class="sourceLine" id="cb14-12" title="12">model2=<span class="kw">jags</span>(<span class="dt">model.file=</span><span class="st">&quot;mixture_model_reparam.R&quot;</span>,</a>
+<a class="sourceLine" id="cb14-13" title="13">            <span class="dt">parameters.to.save=</span>params,<span class="dt">data=</span><span class="kw">list</span>(<span class="dt">x=</span>x,<span class="dt">N=</span><span class="kw">length</span>(x)),<span class="dt">n.chains=</span>nc,</a>
+<a class="sourceLine" id="cb14-14" title="14">            <span class="dt">n.burnin=</span>nb,<span class="dt">n.iter=</span>ni,<span class="dt">n.thin=</span>nt,<span class="dt">DIC=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## 
+## Processing function input....... 
+## 
+## Done. 
+##  
+## Compiling model graph
+##    Resolving undeclared variables
+##    Allocating nodes
+## Graph information:
+##    Observed stochastic nodes: 1000
+##    Unobserved stochastic nodes: 1003
+##    Total graph size: 6009
+## 
+## Initializing model
+## 
+## Adaptive phase..... 
+## Adaptive phase complete 
+##  
+## 
+##  Burn-in phase, 1000 iterations x 5 chains 
+##  
+## 
+## Sampling from joint posterior, 500 iterations x 5 chains 
+##  
+## 
+## Calculating statistics....... 
+## 
+## Done.</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">model2</a></code></pre></div>
+<pre><code>## JAGS output for model &#39;mixture_model_reparam.R&#39;, generated by jagsUI.
+## Estimates based on 5 chains of 1500 iterations,
+## adaptation = 100 iterations (sufficient),
+## burn-in = 1000 iterations and thin rate = 10,
+## yielding 250 total samples from the joint posterior. 
+## MCMC ran for 0.31 minutes at time 2020-02-05 14:21:42.
+## 
+##              mean    sd     2.5%      50%    97.5% overlap0 f  Rhat n.eff
+## mu0         0.977 0.032    0.905    0.978    1.037    FALSE 1 0.998   250
+## theta       9.017 0.074    8.880    9.016    9.158    FALSE 1 1.001   250
+## pi          0.216 0.013    0.192    0.216    0.243    FALSE 1 1.002   250
+## deviance 2806.995 1.883 2805.225 2806.355 2811.407    FALSE 1 1.006   250
+## 
+## Successful convergence based on Rhat values (all &lt; 1.1). 
+## Rhat is the potential scale reduction factor (at convergence, Rhat=1). 
+## For each parameter, n.eff is a crude measure of effective sample size. 
+## 
+## overlap0 checks if 0 falls in the parameter&#39;s 95% credible interval.
+## f is the proportion of the posterior with the same sign as the mean;
+## i.e., our confidence that the parameter is positive or negative.
+## 
+## DIC info: (pD = var(deviance)/2) 
+## pD = 1.8 and DIC = 2808.781 
+## DIC is an estimate of expected predictive error (lower is better).</code></pre>
+<p>Based on the “Rhat” values outputted by JAGS, it seems that now our algorithm has converged successfully!</p>
+<p><br /> <br /></p>
+<p><a href="index.html">Back to main menu</a></p>
 </div>
-<div id="miscellanea" class="section level2">
-<h2>Miscellanea</h2>
-<ol style="list-style-type: decimal">
-<li><p><a href="6_Big_sum_and_big_product.html">Big sum and big product notation</a></p></li>
-<li><p><a href="6a_Proportional_notation.html">“Proportional to” notation</a></p></li>
-<li><p><a href="rnorm_vs_dnorm.html">Difference between “dnorm” and “rnorm”</a></p></li>
-<li><p><a href="10a_Review_of_math_facts.html">Basic math facts</a></p></li>
-<li><p><a href="12_normal_normal_derivation.pdf">Derivation of normal-normal conjugate pair</a></p></li>
-<li><p><a href="9a_deducing_posterior.html">Why can we deduce the posterior distribution just by knowing <span class="math inline">\(p(\pi|X)\)</span> up to a proportionality constant?</a></p></li>
-</ol>
+<div id="comments" class="section level2">
+<h2>Comments?</h2>
+<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
 </article>
 </div>
