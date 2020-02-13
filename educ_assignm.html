@@ -419,7 +419,7 @@ body{ /* Normal  */
 <h2>Modeling these data</h2>
 <p>We are interested in determining the ability of each student. That would be easy if everybody had been exposed to the same set of questions because we could just calculate the proportion of questions that each student got right. In our setting, this is more complicated because some students might have been given harder questions than others. Therefore, even if two students have gotten 80% of the questions right, that doesn’t mean that they have the same ability/skill. To correctly model these data, we will have to take into account that the difficulty of each question also varies.</p>
 <p>Determining the difficulty of each question would be easy to do if we had complete data. In this case, we would simply calculate the proportion of students that got each question right and that would give us a sense of how difficult each question was. Unfortunately, harder questions might have been predominantly given to students with high ability. As a result, two questions that were correctly answered by 80% of the students does not mean that these questions are equally easy. Determining the difficulty of each question will require us to determine the skill level of each student.</p>
-<p>In this assignment, I want you to:</p>
+<p>To keep things simple, in this exercise we will assume that the data are missing at random (i.e., each student gets a random subset of questions to answer). In this assignment, I want you to:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Come up with a generative model for these data</li>
 <li>Develop JAGS code to fit the model you developed in (a)</li>
