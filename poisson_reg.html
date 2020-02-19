@@ -396,7 +396,7 @@ body{ /* Normal  */
 <div id="data" class="section level2">
 <h2>Data</h2>
 <p>Recall that we are interested in modeling the number of species <span class="math inline">\(S_i\)</span> in island <span class="math inline">\(i\)</span> as a function of island size <span class="math inline">\(A_i\)</span>. We will use the data “<a href="island_characteristics.csv">island_characteristics.csv</a>”. Here is how these data look like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">example Poisson reg&#39;</span>)</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">example Poisson_Logistic reg&#39;</span>)</a>
 <a class="sourceLine" id="cb1-2" title="2">dat=<span class="kw">read.csv</span>(<span class="st">&#39;island_characteristics.csv&#39;</span>,<span class="dt">as.is=</span>T)</a>
 <a class="sourceLine" id="cb1-3" title="3">dat1=dat[,<span class="kw">c</span>(<span class="st">&#39;Island&#39;</span>,<span class="st">&#39;Native.bird.species&#39;</span>,<span class="st">&#39;island.area&#39;</span>)]</a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="kw">head</span>(dat1)</a></code></pre></div>
@@ -433,9 +433,11 @@ body{ /* Normal  */
 <li>develop the full Gibbs sampler</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>(optional) If you would like to challenge yourself a little bit more, create customized R code using Metropolis-Hastings within Gibbs for a logistic regression problem, where the posterior distribution is given by:</li>
+<li><p>Do our results using customized R code and JAGS match? What can we conclude about our original scaling factor <span class="math inline">\(z\)</span>?</p></li>
+<li><p>If you would like to challenge yourself a little bit more, create customized R code using Metropolis-Hastings within Gibbs for a logistic regression problem, where the posterior distribution is given by:</p></li>
 </ol>
 <p><span class="math display">\[p(\beta0,\beta_1|...)\propto [\prod_i Bern(y_i|\frac{exp(\beta_0 + \beta_1 x_i)}{1+exp(\beta_0 + \beta_1 x_i)})]\times N(\beta_0|0,10)N(\beta_1|0,10)\]</span></p>
+<p>For this exercise, we will use the data “<a href="malaria.csv">malaria.csv</a>”. In this dataset, the variable “pcr” is the binary response variable <span class="math inline">\(y_i\)</span>, indicating if the person was diagnosed (based on PCR) to be infected or not (1 and 0, respectively). The covariate <span class="math inline">\(x_i\)</span> is given by “time_acrel”, which is the amount of time that the person has been living in the region called Acrelandia. What is the relationship between infection status and time living in this region?</p>
 <p><br /> <br /></p>
 <p><a href="index.html">Back to main menu</a></p>
 </div>
