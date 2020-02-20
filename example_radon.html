@@ -13,7 +13,7 @@
 
 
 
-<title>30_sources_of_uncertainty.utf8</title>
+<title>example_radon.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -369,7 +369,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Sources of uncertainty
+Radon example
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -391,135 +391,56 @@ February 2020
 body{ /* Normal  */
       font-size: 16px;
   }
-}
 </style>
-<div id="data-and-model" class="section level2">
-<h2>Data and model</h2>
-<p>Here we are going to analyze real data on nitrate concentration (i.e., an important water pollutant) in Mississippi river basins as a function of percent row crops (Goolsby et al (1999) NOAA Coastal Ocean Program Decision Analysis Series # 1). Here are the data <a href="river%20data.csv">“river data.csv”</a>. To understand the relationship between nitrate concentration <span class="math inline">\(y_i\)</span> as a function of percent row crops <span class="math inline">\(x_i\)</span> in basin <span class="math inline">\(i\)</span>, we will use the following model:</p>
-<p><span class="math display">\[y_i \sim N(\beta_0 + \beta_1 x_i, \sigma^2)\]</span></p>
+<div id="model" class="section level2">
+<h2>Model</h2>
+<p>Recall that radon concentration was measured in multiple houses, either in the basement (<span class="math inline">\(x_{ik1}=0\)</span>) or at the first floor level (<span class="math inline">\(x_{ik1}=1\)</span>). Furthermore, we also have data on the uranium in the soil for each county (<span class="math inline">\(x_{k2}\)</span>). Uranium is important because it is the first element in a long series of decay that eventually produces radon. In this model, the log-radon concentration for the i-th house in the k-th county is denoted by <span class="math inline">\(y_{ik}\)</span>. Here is how this model looks like:</p>
+<p><span class="math display">\[y_{ik} \sim N(\beta_{0k}+\beta_1 x_{ik1} + \beta_2 x_{k2},\sigma^2) \]</span> <span class="math display">\[\beta_{0k} \sim N(\mu,\tau^2)\]</span></p>
+<p>Here are some of the priors for this model:</p>
+<p><span class="math display">\[\frac{1}{\sigma^2} \sim Gamma(a,b)\]</span> <span class="math display">\[\beta_1 \sim N(0,10)\]</span> <span class="math display">\[\beta_2 \sim N(0,10)\]</span></p>
 </div>
-<div id="no-uncertainty" class="section level2">
-<h2>No uncertainty</h2>
-<p>We can display the results of this model in multiple ways, which reveal different features of what we have learned from data. To simplify things, let’s assume that <span class="math inline">\(x_i=10\)</span>. For instance, we can calculate the posterior mean of each slope parameter (let’s denote these means by <span class="math inline">\(\hat{\beta_0}\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span>) and use these means to predict pollutant concentration</p>
-<p><span class="math display">\[\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}\times 10\]</span></p>
-<p>This approach of course ignores uncertainty in our parameter estimates.</p>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>The radon data are available in the file “<a href="radon%20data%20gelman_hill.csv">radon data gelman_hill.csv</a>”. Here is how these data look like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>(<span class="dt">all=</span>T))</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#import data</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">example radon&#39;</span>)</a>
+<a class="sourceLine" id="cb1-5" title="5">radon=<span class="kw">read.csv</span>(<span class="st">&#39;radon data gelman_hill.csv&#39;</span>,<span class="dt">as.is=</span>T)</a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">head</span>(radon)</a></code></pre></div>
+<pre><code>##   log.radon floor      log.u county
+## 1 0.7884574     1 -0.6890476      1
+## 2 0.7884574     0 -0.6890476      1
+## 3 1.0647107     0 -0.6890476      1
+## 4 0.0000000     0 -0.6890476      1
+## 5 1.1314021     0 -0.8473129      2
+## 6 0.9162907     0 -0.8473129      2</code></pre>
 </div>
-<div id="parameter-uncertainty" class="section level2">
-<h2>Parameter uncertainty</h2>
-<p>Alternatively, we can account for parameter uncertainty on the mean by using the posterior distribution of our parameters. We do this by drawing sets of parameters from their joint posterior distribution. Let’s denote the j-th draw by adding the subscript j to our parameters {<span class="math inline">\(\beta_{0j},\beta_{1j},{\sigma_j}^2\)</span>}. Then, we calculate:</p>
-<p><span class="math display">\[\hat{y_{ij}}=\beta_{0j}+\beta_{1j}\times 10\]</span></p>
-<p>and we can plot the distribution of <span class="math inline">\(\hat{y_{ij}}\)</span> (orange line). The posterior distribution is avaiable here: <a href="posterior%20distrib.csv">“posterior distrib.csv”</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">setwd</span>(<span class="st">&#39;U:/uf/courses/bayesian course/2015/chapter9/river data&#39;</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3">dat=<span class="kw">read.csv</span>(<span class="st">&#39;river data.csv&#39;</span>,<span class="dt">as.is=</span>T)</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw">setwd</span>(<span class="st">&#39;U:/uf/courses/bayesian course/2015/chapter9&#39;</span>)</a>
-<a class="sourceLine" id="cb1-6" title="6">param=<span class="kw">read.csv</span>(<span class="st">&#39;posterior distrib.csv&#39;</span>,<span class="dt">as.is=</span>T) <span class="co">#this dataset contains samples from the posterior distribution</span></a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#estimate of pollutant concentration without uncertainty</span></a>
-<a class="sourceLine" id="cb1-9" title="9">estim=<span class="kw">apply</span>(param,<span class="dv">2</span>,mean) <span class="co">#get the mean of the posterior distribution of each parameter</span></a>
-<a class="sourceLine" id="cb1-10" title="10">yhat=estim[<span class="st">&#39;b0&#39;</span>]<span class="op">+</span>estim[<span class="st">&#39;b1&#39;</span>]<span class="op">*</span><span class="dv">10</span> </a>
-<a class="sourceLine" id="cb1-11" title="11"></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="co">#estimate of pollutant concentration with parameter uncertainty using joint distribution</span></a>
-<a class="sourceLine" id="cb1-13" title="13">yhat1=param[,<span class="st">&#39;b0&#39;</span>]<span class="op">+</span>param[,<span class="st">&#39;b1&#39;</span>]<span class="op">*</span><span class="dv">10</span> </a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="kw">plot</span>(<span class="kw">density</span>(yhat1),<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>,<span class="dt">main=</span><span class="st">&#39;Inference for x=10&#39;</span>,<span class="dt">xlab=</span><span class="st">&#39;yhat&#39;</span>)</a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="kw">points</span>(yhat,<span class="dv">0</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&#39;red&#39;</span>) <span class="co">#estimate of pollutant concentration without parameter uncertainty</span></a>
-<a class="sourceLine" id="cb1-16" title="16"></a>
-<a class="sourceLine" id="cb1-17" title="17"><span class="co">#estimate of pollutant concentration with parameter uncertainty using marginal distributions, instead of joint distribution</span></a>
-<a class="sourceLine" id="cb1-18" title="18">y_bad=param[,<span class="st">&#39;b0&#39;</span>]<span class="op">+</span><span class="kw">sample</span>(param[,<span class="st">&#39;b1&#39;</span>],<span class="kw">nrow</span>(param))<span class="op">*</span><span class="dv">10</span> </a>
-<a class="sourceLine" id="cb1-19" title="19">k=<span class="kw">density</span>(y_bad)</a>
-<a class="sourceLine" id="cb1-20" title="20"><span class="kw">lines</span>(k<span class="op">$</span>x,k<span class="op">$</span>y,<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</a>
-<a class="sourceLine" id="cb1-21" title="21"><span class="kw">legend</span>(<span class="fl">0.2</span>,<span class="fl">2.5</span>,<span class="dt">lty=</span><span class="dv">1</span>,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&#39;orange&#39;</span>,<span class="st">&#39;blue&#39;</span>),<span class="kw">c</span>(<span class="st">&#39;joint&#39;</span>,<span class="st">&#39;marginal&#39;</span>))</a></code></pre></div>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
-<p>In this figure, the red point depicts the mean <span class="math inline">\(\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}\times 10\)</span> while the orange lines show the uncertainty around this mean once parameter uncertainty is taken into account (i.e., the distribution of <span class="math inline">\(\hat{y_{ij}}\)</span>). Notice that we used the joint posterior distribution (orange line). In other words, I calculated:</p>
-<p><span class="math display">\[\begin{bmatrix}
- \hat{y_{i1}} \\[0.3em]
- ...          \\[0.3em]
- \hat{y_{in}} \\[0.3em]
-\end{bmatrix}=
-\begin{bmatrix}
- \beta_{01} \\[0.3em]
- ...        \\[0.3em]
- \beta_{0n} \\[0.3em]
-\end{bmatrix}+
-\begin{bmatrix}
- \beta_{11} \\[0.3em]
- ...        \\[0.3em]
- \beta_{1n} \\[0.3em]
-\end{bmatrix} \times 10\]</span></p>
-<p>The ability to get the joint posterior distribution is an important characteristic of Bayesian models. If we had used just the marginal posterior distributions, our results could have been very different. To illustrate this, I can calculate:</p>
-<p><span class="math display">\[\begin{bmatrix}
- \hat{y_{i1}} \\[0.3em]
- \hat{y_{i2}} \\[0.3em]
- \hat{y_{i3}} \\[0.3em] 
- ...          \\[0.3em]
-\end{bmatrix}=
-\begin{bmatrix}
- \beta_{01} \\[0.3em]
- \beta_{02} \\[0.3em]
- \beta_{03} \\[0.3em] 
- ...        \\[0.3em]
-\end{bmatrix}+
-\begin{bmatrix}
- \beta_{14} \\[0.3em]
- \beta_{19} \\[0.3em]
- \beta_{11} \\[0.3em] 
- ...        \\[0.3em]
-\end{bmatrix} \times 10\]</span></p>
-<p>Notice how the second subscript denoting the sample number for <span class="math inline">\(\beta_1\)</span> is all mixed up and does not match that of <span class="math inline">\(\beta_0\)</span>. The key point here is that the results using the marginal distributions (i.e., ignoring the relationship between samples from <span class="math inline">\(\beta_1\)</span> and samples from <span class="math inline">\(\beta_0\)</span>) will be not only different but incorrect (blue line).</p>
+<div id="model-comparison" class="section level2">
+<h2>Model comparison</h2>
+<p>To understand the difference between a fixed versus a random effect formulation, we will create two distinct JAGS models:</p>
+<ol style="list-style-type: decimal">
+<li>Fixed effects model: to make <span class="math inline">\(\beta_{0k}\)</span> into a fixed effect, I will avoid estimating <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\tau^2\)</span> by setting these to 0 and 10, respectively. In other words, we are using our standard vague prior by assuming that:</li>
+</ol>
+<p><span class="math display">\[\beta_{0k} \sim N(0,10)\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Mixed-effects model: to make <span class="math inline">\(\beta_{0k}\)</span> a random effect, I will also have to estimate <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\tau^2\)</span>. As a result, I will need to specify priors for these prior-parameters. More specifically, I will assume that:</li>
+</ol>
+<p><span class="math display">\[\beta_{0k} \sim N(\mu,\tau^2)\]</span> <span class="math display">\[\mu \sim N(0,10)\]</span> <span class="math display">\[\frac{1}{\tau^2} \sim Gamma(a,b)\]</span></p>
 </div>
-<div id="parameter-sampling-uncertainty" class="section level2">
-<h2>Parameter + sampling uncertainty</h2>
-<p>Another source of uncertainty besides parameter uncertaint is sampling uncertainty. Now we are not interested in the mean anymore. Rather, we are interested in actual pollutant values. To do this, we will be creating new datasets by sampling from the <span style="color:red"> predictive distribution </span>. These new datasets are generate by first drawing a set of parameters from the posterior distribution {<span class="math inline">\(\beta_{0j},\beta_{1j},\sigma_j^2\)</span>} and then drawing a new observation from <span class="math inline">\(N(\beta_{0j} + \beta_{1j} \times 10, \sigma_j^2)\)</span>. In other words, we do this by calculating:</p>
-<p><span class="math display">\[\begin{bmatrix}
- y_{i1}^{new} \\[0.3em]
- y_{i2}^{new} \\[0.3em]
- y_{i3}^{new} \\[0.3em] 
- ...          \\[0.3em]
-\end{bmatrix}=
-\begin{bmatrix}
- N(\beta_{01}+\beta_{11} \times 10,\sigma_1^2) \\[0.3em]
- N(\beta_{02}+\beta_{12} \times 10,\sigma_2^2) \\[0.3em]
- N(\beta_{03}+\beta_{13} \times 10,\sigma_3^2) \\[0.3em]
- ...        \\[0.3em]
-\end{bmatrix}\]</span></p>
-<p>Here is how we implement this in R:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co">#estimate of pollutant concentration with parameter uncertainty</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">plot</span>(<span class="kw">density</span>(yhat1),<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>,<span class="dt">main=</span><span class="st">&#39;Inference for x=10&#39;</span>,<span class="dt">xlab=</span><span class="st">&#39;yhat&#39;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co">#estimate of pollutant concentration without uncertainty</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw">points</span>(yhat,<span class="dv">0</span>,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&#39;red&#39;</span>) </a>
-<a class="sourceLine" id="cb2-6" title="6"></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co">#estimate of pollutant concentration with parameter and sampling uncertainty</span></a>
-<a class="sourceLine" id="cb2-8" title="8">yhat2=<span class="kw">rnorm</span>(<span class="kw">nrow</span>(param),<span class="dt">mean=</span>param[,<span class="st">&#39;b0&#39;</span>]<span class="op">+</span>param[,<span class="st">&#39;b1&#39;</span>]<span class="op">*</span><span class="dv">10</span>,<span class="dt">sd=</span><span class="kw">sqrt</span>(param[,<span class="st">&#39;sig2&#39;</span>])) </a>
-<a class="sourceLine" id="cb2-9" title="9">yhat2a=<span class="kw">density</span>(yhat2)</a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="kw">lines</span>(yhat2a<span class="op">$</span>x,yhat2a<span class="op">$</span>y,<span class="dt">col=</span><span class="st">&#39;grey&#39;</span>)</a></code></pre></div>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
-<p>We now depict in grey lines the overall uncertainty that arises from sampling and parameter uncertainty (i.e., distribution for <span class="math inline">\(y_{ij}^{new}\)</span>). As you will notice, now the level of uncertainty is much larger.</p>
-</div>
-<div id="when-we-make-predictions-which-sources-of-uncertainty-should-we-include" class="section level2">
-<h2>When we make predictions, which sources of uncertainty should we include?</h2>
-<p>Notice that if we are reporting only parameter uncertainty, this just describes our level of uncertainty regarding the mean of nitrate concentration for rivers with row crops occupying 10% of the basin. In other words, this just tells us what we expect nitrate concentration for rivers with this covariate value to be <span style="color:red"> on average </span>. However, if we want to make predictions for a new river, we have to report the uncertainty around the mean together with sampling uncertainty.</p>
-<p>By the way, is there anything that already calls your attention about our model having some issues? Notice that our model allows for substantial probability of rivers having a negative concentration of nitrate! This is an important shortcoming of our model, suggesting that it could and should be improved to avoid this.</p>
-<p>These different levels of uncertainty are particularly important when making predictions. For instance, say this model describes the concentration of a particular pollutant in the river (i.e., our response variable). Say we want to predict this concentration for a new river with covariate value equal to 10. Assume that rivers with concentrations above 0.5 are declared to be impaired and the federal government has to take action to recover these impaired rivers. Should we make predictions using the estimated mean trend or should we account for parameter uncertainty? Alternatively, should we account for sampling uncertainty as well?</p>
-<p>We get very different results, depending on the amount of uncertainty that we include in our calculations. For instance, if we:</p>
-<ul>
-<li>don’t account for any source of uncertainty, then <span class="math inline">\(p(\hat{y_i}&gt;0.5)=1\)</span></li>
-<li>account for parameter uncertainty around the mean, then <span class="math inline">\(p(\hat{y_i}&gt;0.5)=0.94\)</span></li>
-<li>account for sampling and parameter uncertainty, we get <span class="math inline">\(p(\hat{y_i}&gt;0.5)=0.60\)</span>.</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#what is the probability of river impairment for x=10?</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw">mean</span>(yhat<span class="op">&gt;</span><span class="fl">0.5</span>) <span class="co">#1</span></a></code></pre></div>
-<pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">mean</span>(yhat1<span class="op">&gt;</span><span class="fl">0.5</span>) <span class="co">#0.94</span></a></code></pre></div>
-<pre><code>## [1] 0.948</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">mean</span>(yhat2<span class="op">&gt;</span><span class="fl">0.5</span>) <span class="co">#0.60</span></a></code></pre></div>
-<pre><code>## [1] 0.6144444</code></pre>
+<div id="analysis-steps" class="section level2">
+<h2>Analysis steps</h2>
+<ol style="list-style-type: decimal">
+<li><p>Create model 1 in JAGS and estimate all the parameters.</p></li>
+<li><p>Create model 2 in JAGS and estimate all the parameters.</p></li>
+<li><p>Compare your estimates of <span class="math inline">\(\beta_{0k}\)</span> from model 1 and from model 2. How similar or distinct are these estimates? How is the similarity between these parameter estimates influenced by the number of observations for the corresponding county?</p></li>
+</ol>
+<p>Obs.: to create these models in JAGS, we will need to rely on the following code “b0k[county[i]]”</p>
 <p><br /> <br /></p>
-<div id="comments" class="section level3">
-<h3>Comments?</h3>
-<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
+<div id="comments" class="section level2">
+<h2>Comments?</h2>
+<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
 </article>
 </div>
