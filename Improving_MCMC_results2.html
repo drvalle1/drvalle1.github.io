@@ -13,7 +13,7 @@
 
 
 
-<title>centering_convergence2.utf8</title>
+<title>Improving_MCMC_results2.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -452,14 +452,14 @@ body{ /* Normal  */
 <a class="sourceLine" id="cb3-40" title="40">}</a>
 <a class="sourceLine" id="cb3-41" title="41"><span class="kw">colnames</span>(store.param)=<span class="kw">c</span>(<span class="st">&#39;b0&#39;</span>,<span class="st">&#39;b1&#39;</span>)</a>
 <a class="sourceLine" id="cb3-42" title="42"></a>
-<a class="sourceLine" id="cb3-43" title="43"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">centering convergence&#39;</span>)</a>
+<a class="sourceLine" id="cb3-43" title="43"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">improving MCMC&#39;</span>)</a>
 <a class="sourceLine" id="cb3-44" title="44"><span class="kw">write.csv</span>(store.param,<span class="st">&#39;poisreg results centering.csv&#39;</span>,<span class="dt">row.names=</span>F)</a></code></pre></div>
 </div>
 <div id="assessing-convergence-and-correlation-between-beta_0-and-beta_1" class="section level2">
 <h2>Assessing convergence and correlation between <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span></h2>
 <p>The first thing we will do is to determine if and when the algorithm has converged. From the plots below, it seems that our algorithm converges almost immediately. Therefore, I assume that the algorithm has converged after 50 iterations.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co">#get data</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">centering convergence&#39;</span>)</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">setwd</span>(<span class="st">&#39;U:</span><span class="ch">\\</span><span class="st">uf</span><span class="ch">\\</span><span class="st">courses</span><span class="ch">\\</span><span class="st">bayesian course</span><span class="ch">\\</span><span class="st">improving MCMC&#39;</span>)</a>
 <a class="sourceLine" id="cb4-3" title="3">param=<span class="kw">read.csv</span>(<span class="st">&#39;poisreg results centering.csv&#39;</span>,<span class="dt">as.is=</span>T)</a>
 <a class="sourceLine" id="cb4-4" title="4"></a>
 <a class="sourceLine" id="cb4-5" title="5">ngibbs=<span class="kw">nrow</span>(param)</a>
