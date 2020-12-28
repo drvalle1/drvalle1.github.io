@@ -359,27 +359,27 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<div id="problem-set-4" class="section level2">
-<h2>Problem set 4</h2>
-<ol style="list-style-type: decimal">
-<li>Say we want to know the prevalence of illegal hunting. Few people are likely to admit participating in such an activity. Nevertheless, a clever use of statistics might still enable us to estimate the proportion of people engaged in such an activity. The method that we are going to focus on is called randomized response technique (RRT). This is one of several methods that have been developed for the purpose of asking sensitive questions (see review in <span class="citation">(Nuno and St. John 2015)</span>). This is how it works.</li>
-</ol>
+<div id="problem-1" class="section level2">
+<h2>Problem 1</h2>
+<p>Say we want to know the prevalence of illegal hunting. Few people are likely to admit participating in such an activity. Nevertheless, a clever use of statistics might still enable us to estimate the proportion of people engaged in such an activity. The method that we are going to focus on is called randomized response technique (RRT). This is one of several methods that have been developed for the purpose of asking sensitive questions (see review in <span class="citation">(Nuno and St. John 2015)</span>). This is how it works.</p>
 <p>Every survey participant is going to have a randomizing device (e.g., a coin), whose results will be unknown to the interviewer. The participating hears the question and flips the coin. If he gets a “head”, the participant should answer “yes” no matter what. If he gets a “tail”, then the participant should provide an honest answer to the question. This randomization is useful because it does not allow the interviewer to know for sure if the person participates in illegal hunting. Nevertheless, we can still estimate the proportion of people that engage in illegal hunting! Here is (finally!) the questions for you to answer:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>If we interview 200 people and 120 people answer “yes”, what is the MLE of the proportion of people engaged in illegal hunting?</p></li>
 <li><p>Would it be better for us to use a spinner, with numbers from 1 to 6, such that the person answers “yes” if he gets a 1 and answers honestly if gets 2-6?</p></li>
 </ol>
-<ol start="2" style="list-style-type: decimal">
-<li>We are tired of receiving spams in our mailboxes and we want to use our recently acquired Bayesian skills to develop a method to screen out these obnoxious emails. Say that you received 2000 emails total per year, out of which 100 are junk. Among these junk email, the following words show up frequently: money (60 emails), viagra (30 emails), and sales (50 emails). In your regular mailbox, the frequency of these words is different: money (300 emails) (sigh!), viagra (50 emails), and sales (100 emails).</li>
-</ol>
+</div>
+<div id="problem-2" class="section level2">
+<h2>Problem 2</h2>
+<p>We are tired of receiving spams in our mailboxes and we want to use our recently acquired Bayesian skills to develop a method to screen out these obnoxious emails. Say that you received 2000 emails total per year, out of which 100 are junk. Among these junk email, the following words show up frequently: money (60 emails), viagra (30 emails), and sales (50 emails). In your regular mailbox, the frequency of these words is different: money (300 emails) (sigh!), viagra (50 emails), and sales (100 emails).</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>If you could only choose a single word to filter the bad emails, which one would you choose? Why?</p></li>
 <li><p>Using these data and assuming words are independent given the type of email (spam or regular email), what is the chance that an email is spam given the presence of these three words?</p></li>
 </ol>
 <p>The problems below were adapted from <span class="citation">(Winkler 2003)</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Consider an individual chosen at random from the city of interest, and let <span class="math inline">\(\theta=2\)</span> if he has lung cancer, <span class="math inline">\(\theta=1\)</span> if he has tuberculosis, and <span class="math inline">\(\theta=0\)</span> if he has neither disease. Say that we have prior information regarding the probability that such a person have each of these conditions (i.e., prevalence of these conditions), given by</li>
-</ol>
+</div>
+<div id="problem-3" class="section level2">
+<h2>Problem 3</h2>
+<p>Consider an individual chosen at random from the city of interest, and let <span class="math inline">\(\theta=2\)</span> if he has lung cancer, <span class="math inline">\(\theta=1\)</span> if he has tuberculosis, and <span class="math inline">\(\theta=0\)</span> if he has neither disease. Say that we have prior information regarding the probability that such a person have each of these conditions (i.e., prevalence of these conditions), given by</p>
 <p><span class="math display">\[p(\theta=0)=0.97\]</span> <span class="math display">\[p(\theta=1)=0.01\]</span> <span class="math display">\[p(\theta=2)=0.02\]</span></p>
 <p>In order to obtain more information about <span class="math inline">\(\theta\)</span>, you take a chest X-ray of the individual. This new information is summarized as <span class="math inline">\(y=1\)</span> if the X-ray is positive (that is, if a “spot” shows up on the X-ray) and <span class="math inline">\(y=0\)</span> if the X-ray is not positive. Based on information from a medical expert, we know that:</p>
 <p><span class="math display">\[p(y=1|\theta=0)=0.07\]</span> <span class="math display">\[p(y=1|\theta=1)=0.95\]</span> <span class="math display">\[p(y=1|\theta=2)=0.9\]</span> Use Bayes theorem to calculate the posterior probabilities that, if this individual has a positive X-ray, he will have lung cancer, tuberculosis, or neither of these diseases. To answer this question, fill out the following table:</p>
@@ -454,9 +454,10 @@ Sum
 </td>
 </tr>
 </table>
-<ol start="4" style="list-style-type: decimal">
-<li>Suppose that a production manager is concerned about the items produced by a certain manufacturing process. More specifically, she is concerned about the proportion of these items that are defective. From past experience with the process, she feels that the proportion defective, an uncertain quantity denoted by <span class="math inline">\(\pi\)</span>, takes on four possible values: 0.01, 0.05, 0.1 and 0.25. These are the four possible values of the population parameter <span class="math inline">\(\pi\)</span>. The manager feels that one of these four “states” will actually occur, but she does not know which one. These four values might be explained in terms of malfunctions in the production process. Either (1) there are no malfunctions, in which case <span class="math inline">\(\pi=0.01\)</span> and the process is “in control”; (2) there is a “type x” malfunction, in which case <span class="math inline">\(\pi=0.05\)</span>; (3) there are two malfunctions, “type x” and “type y”, in which case <span class="math inline">\(\pi=0.1\)</span>; or (4) there are three malfunctions, “type x”, “type y”, and “type z”, in which case <span class="math inline">\(\pi=0.25\)</span>. This is obviously a simplification of the real situation because it is highly unlikely that <span class="math inline">\(\pi\)</span> would take on only the four given values and no intermediate values.</li>
-</ol>
+</div>
+<div id="problem-4" class="section level2">
+<h2>Problem 4</h2>
+<p>Suppose that a production manager is concerned about the items produced by a certain manufacturing process. More specifically, she is concerned about the proportion of these items that are defective. From past experience with the process, she feels that the proportion defective, an uncertain quantity denoted by <span class="math inline">\(\pi\)</span>, takes on four possible values: 0.01, 0.05, 0.1 and 0.25. These are the four possible values of the population parameter <span class="math inline">\(\pi\)</span>. The manager feels that one of these four “states” will actually occur, but she does not know which one. These four values might be explained in terms of malfunctions in the production process. Either (1) there are no malfunctions, in which case <span class="math inline">\(\pi=0.01\)</span> and the process is “in control”; (2) there is a “type x” malfunction, in which case <span class="math inline">\(\pi=0.05\)</span>; (3) there are two malfunctions, “type x” and “type y”, in which case <span class="math inline">\(\pi=0.1\)</span>; or (4) there are three malfunctions, “type x”, “type y”, and “type z”, in which case <span class="math inline">\(\pi=0.25\)</span>. This is obviously a simplification of the real situation because it is highly unlikely that <span class="math inline">\(\pi\)</span> would take on only the four given values and no intermediate values.</p>
 <p>Suppose the manager summarizes her degree-of-belief, or subjective, probabilities for the four possible values of <span class="math inline">\(\pi\)</span>:</p>
 <p><span class="math display">\[p(\pi = 0.01) = 0.6\]</span> <span class="math display">\[p(\pi = 0.05) = 0.3\]</span> <span class="math display">\[p(\pi = 0.1) = 0.08\]</span> <span class="math display">\[p(\pi = 0.25) = 0.02\]</span></p>
 <p>In addition to this prior information, the production manager decides to obtain some sample information from the process.</p>
@@ -721,9 +722,10 @@ Sum
 </td>
 </tr>
 </table>
-<ol start="5" style="list-style-type: decimal">
-<li>The owner of an automobile dealership is concerned about the performance of his salesmen. From past experience with the dealership, he feels that salesmen can be divided roughly into three categories, which he calls “great”, “good”, and “poor”. A “great” salesman sells cars at a rate of one every other day. It should be noted that this does not mean that such a salesman will sell one car exactly every other day; a “great” salesman may have periods of several days with no sales or he may have several sales in a single day. On the average, however, he sells about one car every two days. A “good” salesman sells cars at a rate of one every fourth day, and “poor” salesman sells car at a rate of one every eighth day.</li>
-</ol>
+</div>
+<div id="problem-5" class="section level2">
+<h2>Problem 5</h2>
+<p>The owner of an automobile dealership is concerned about the performance of his salesmen. From past experience with the dealership, he feels that salesmen can be divided roughly into three categories, which he calls “great”, “good”, and “poor”. A “great” salesman sells cars at a rate of one every other day. It should be noted that this does not mean that such a salesman will sell one car exactly every other day; a “great” salesman may have periods of several days with no sales or he may have several sales in a single day. On the average, however, he sells about one car every two days. A “good” salesman sells cars at a rate of one every fourth day, and “poor” salesman sells car at a rate of one every eighth day.</p>
 <p>The owner decides to express this information in terms of the uncertainty quantity <span class="math inline">\(\lambda\)</span>, which represents the average sales rate per day. Therefore, the three possible values of <span class="math inline">\(\lambda\)</span> that he is considering are ½ (the “great” salesman), ¼ (the “good” salesman) and 1/8 (the “poor” salesman). Realistically, it is highly unlikely that <span class="math inline">\(\lambda\)</span> would take on only these three values but we are going to use only these three values to simplify the problem.</p>
 <p>The owner of the dealership has just hired a new salesman. Based on past experience with salesmen and on a personal interview with the new employee, the owner judges that the odds are 4 to 1 against his being a great salesman but that the odds are even that he could be a good salesman.</p>
 <ol style="list-style-type: lower-alpha">
