@@ -13,7 +13,7 @@
 
 
 
-<title>index.utf8</title>
+<title>34A_robust_regression_integration.utf8</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
@@ -336,7 +336,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Introduction Bayesian Statistics Applied to Life Sciences
+Integrating tau out from the robust regression model
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -359,154 +359,22 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<p>This website contains part of the material I use for the semester-long course “Introduction to Bayesian Statistics Applied to Life Sciences” that I teach at Univ. of Florida. This course is geared towards students that have not been formally trained as statisticians and therefore it does not rely on linear algebra or advanced calculus. However, this material will require some understanding of basic calculus concepts and distribution theory as well as good grasp of programming.</p>
-<p>Observation: I am still putting this website together so some of the material is not posted yet and there might be some rough edges. If you have any suggestions or comments, feel free to contact me (drvalle at ufl dot edu).</p>
-<div id="introductory-material" class="section level2">
-<h2>Introductory material</h2>
-<ol start="0" style="list-style-type: decimal">
-<li><p><a href="0_Approach_to_teaching_Bayes.html">Approach to teaching Bayes</a></p></li>
-<li><p><a href="1_Introduction_to_Bayes.html">Introduction to Bayes</a></p></li>
-<li><p><a href="2_Probabilities_Example_death_penalty.html">Probabilities: a quick example on death penalty</a></p></li>
-<li><p><a href="3_Probability_rules.html">Probability rules</a></p></li>
-<li><p><a href="4_Bayes_theorem.html">Bayes theorem</a></p></li>
-</ol>
-<p><span style="color: red;">Submarine Activity:</span> <a href="submarine-example.html">click here</a></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="8B_PMF_and_PDF.html">Quick overview of PMFs and PDFs</a></p></li>
-<li><p>The likelihood function</p></li>
-</ol>
-<ul>
-<li><a href="7_Likelihood.html">Likelihood for simple models</a></li>
-<li><a href="7a_Likelihood_regression.html">Likelihood for regression models</a></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>Maximum likelihood estimation (MLE)</li>
-</ol>
-<ul>
-<li><a href="8_MLE.html">Basic ideas</a></li>
-</ul>
-<p><span style="color: red;">Biomass recovery activity:</span> <a href="biomass-recovery-assignm.html">click here</a></p>
+<div id="how-do-we-integratemarginalize-parameters-out" class="section level2">
+<h2>How do we integrate/marginalize parameters out?</h2>
+<p>Recall our probability rules. We can go from the joint probability <span class="math inline">\(p(A,B)\)</span> to the marginal probability <span class="math inline">\(p(A)\)</span> using the following expression:</p>
+<p><span class="math display">\[p(A)=\sum_{j=1}^J p(A,B=j) = \sum_{j=1}^J p(A|B=j)p(B=j)\]</span> In this expression, we assume that each outcome that B can take is a mutually exclusive outcome and we assume that these outcomes are discrete.</p>
+<p>The same idea also works when we want to remove parameters from our models. However, because parameters are typically continuous, we will need to rely on integration instead of summation. For example:</p>
+<p><span class="math display">\[p(y_i)=\int p(y_i|\theta)p(\theta) d\theta\]</span></p>
+<p>Going back to the robust regression model, we want to integrate out <span class="math inline">\(\tau_i\)</span>. Here is how we do this:</p>
+<p><span class="math display">\[p(y_i|\beta_0,\beta_1,x_i,\sigma^2) = \int N(y_i|\beta_0 +\beta_1 x_i,\frac{\sigma^2}{\tau_i}) Gamma(\tau_i|\frac{\nu}{2},\frac{\nu}{2})d\tau_i\]</span> Let <span class="math inline">\(\mu_i = \beta_0 +\beta_1 x_i\)</span>. We are interested in the distribution of the quantity <span class="math inline">\(\frac{y_i-\mu_i}{\sigma}\)</span>. Therefore, we have that: <span class="math display">\[\propto \int \frac{1}{\sqrt{2\pi \frac{\sigma^2}{\tau_i}}}exp(-\frac{1}{2\frac{\sigma^2}{\tau_i}} (y_i-\mu_i)^2) \tau_i ^{\frac{v}{2}-1}exp(-\frac{v}{2}\tau_i)d\tau_i\]</span> <span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}} \int \tau_i^{\frac{1}{2}} exp(-\tau_i \frac{(y_i -\mu_i)^2}{2\sigma^2}) \tau_i ^{\frac{v}{2}-1}exp(-\frac{v}{2}\tau_i)d\tau_i\]</span></p>
+<p><span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}} \int \tau_i^{\frac{v+1}{2}-1} exp(-\tau_i [\frac{(y_i -\mu_i)^2}{2\sigma^2}+\frac{v}{2}])d\tau_i\]</span> You should recognize the integrand as the kernel of a Gamma distribution. Furthermore, recall that <span class="math inline">\(\int \frac{b^a}{\Gamma(a)} x^{a-1}exp(-bx)dx = 1\)</span>. This implies that <span class="math inline">\(\int x^{a-1}exp(-bx)dx = \frac{\Gamma(a)}{b^a}\)</span>. Therefore, we can solve the above integral and obtain:</p>
+<p><span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}}\frac{\Gamma(\frac{v+1}{2})}{[\frac{(y_i-\mu_i)^2}{2\sigma^2}+\frac{v}{2}]^{\frac{v+1}{2}}}\]</span> <span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}}[\frac{(y_i-\mu_i)^2}{2\sigma^2}+\frac{v}{2}]^{-\frac{v+1}{2}}\]</span> If we multiply by <span class="math inline">\(\frac{v}{2} \times \frac{2}{v}\)</span>, we get:</p>
+<p><span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}}[\frac{v}{2} \times \frac{2}{v}[\frac{(y_i-\mu_i)^2}{2\sigma^2}+\frac{v}{2}]]^{-\frac{v+1}{2}}\]</span> <span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}}[\frac{v}{2} [\frac{1}{v}\frac{(y_i-\mu_i)^2}{\sigma^2}+1]]^{-\frac{v+1}{2}}\]</span> <span class="math display">\[\propto \frac{1}{\sqrt{\sigma^2}} [1+\frac{1}{v}\frac{(y_i-\mu_i)^2}{\sigma^2}]^{-\frac{v+1}{2}}\]</span> This is a non-standardized Student t-distribution (see <a href="https://en.wikipedia.org/wiki/Student%27s_t-distribution">wikipedia</a>).</p>
+<p><br /> <br /></p>
 </div>
-<div id="basics-of-bayes" class="section level2">
-<h2>Basics of Bayes</h2>
-<ol style="list-style-type: decimal">
-<li>Conjugate likelihood-prior pairs:</li>
-</ol>
-<ul>
-<li>Basketball example I: <a href="9_Conjugate_pairs_example.html">Binomial-beta pair</a></li>
-<li>Basketball example II: <a href="10_Informative_priors.html">Informative priors</a></li>
-<li>Basketball example III: <a href="11_Closing_basketball_example.html">Final remarks</a></li>
-</ul>
-<p><span style="color: red;">Cancer risk activity:</span> <a href="cancer-example.html">click here</a></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p><a href="12A_normal_normal_example.html">An example for the normal-normal conjugate pair</a></p></li>
-<li><p>Monte Carlo integration</p></li>
-</ol>
-<ul>
-<li><a href="14_Monte_Carlo_integration.html">MC1</a></li>
-<li><a href="15_Monte_Carlo_integration1.html">MC2</a></li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li><a href="18_gibbs_sampling.html">Gibbs sampling</a></li>
-</ol>
-<ul>
-<li><a href="17_FCDs.html">Full conditional distributions</a></li>
-<li><a href="19_gibbs_sampling_example.html">Customized Gibbs sampler in R</a></li>
-<li><a href="19a_troubleshoot.html">Tips on troubleshooting your customized Gibbs sampler</a></li>
-</ul>
-<p><span style="color: red;">Climate change activity:</span> <a href="climate-change-assignm.html">click here</a></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="16_intro_generative_model.html">Generative models and inverse modeling</a></p></li>
-<li><p><a href="21_JAGS.html">JAGS</a></p></li>
-<li><p>Convergence</p></li>
-</ol>
-<ul>
-<li><a href="20_MCMC_convergence.html">MCMC convergence</a></li>
-<li><a href="convergence_problems.html">MCMC lack of convergence</a></li>
-</ul>
-<p><span style="color: red;">Population size activity: </span> <a href="23_estimating_pop.html">description</a> and <a href="23a_estimating_pop.html">activity</a></p>
-<p><span style="color: red;">Educational data activity: </span><a href="educ_assignm.html">click here</a></p>
-<ol start="8" style="list-style-type: decimal">
-<li>Metropolis-Hastings algorithm</li>
-</ol>
-<ul>
-<li><a href="26_MH_algorithm.html">Motivation</a></li>
-<li><a href="27_MH_algorithm1.html">Algorithm</a></li>
-<li><a href="29_MH_algorithm_Intuition.html">Intuition</a></li>
-</ul>
-<p><span style="color: red;">Poisson regression activity: </span><a href="poisson_reg1.html">click here</a></p>
-<ol start="9" style="list-style-type: decimal">
-<li>Mixed models</li>
-</ol>
-<ul>
-<li><a href="41_mixed_models.html">Introduction to mixed models</a></li>
-<li><a href="43_mixed_models_shrinkage.html">Shrinkage</a></li>
-<li><a href="correlation_random_effect.html">Correlation induced by random effects</a></li>
-</ul>
-<p><span style="color: red;">Radon activity: </span><a href="example_radon.html">click here</a></p>
-<ol start="10" style="list-style-type: decimal">
-<li>Sources of uncertainty</li>
-</ol>
-<ul>
-<li><a href="30_sources_of_uncertainty.html">Example of river pollutant</a></li>
-<li><a href="31_sources_of_uncertainty1.html">Example of river pollutant across a range of covariate values</a></li>
-<li><a href="31a_predictive_distribution_model_assump.html">Model fit and predictive distribution</a></li>
-</ul>
-<p><span style="color: red;">River pollutant activity: </span><a href="river_pollutant.html">click here</a></p>
-</div>
-<div id="less-common-but-interesting-models" class="section level2">
-<h2>Less common but interesting models</h2>
-<ol style="list-style-type: decimal">
-<li>Robust regression</li>
-</ol>
-<ul>
-<li><a href="32a_robust_regression.html">Introduction to robust regression</a></li>
-<li><a href="33_robust_regression_FCDs.pdf">Equations for our customized Gibbs sampler</a></li>
-<li><a href="34A_robust_regression_integration">Integrating tau out from the robust regression model</a></li>
-</ul>
-<p><span style="color: red;">Robust regression activity: </span><a href="robust_regression.html">click here</a></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Models with latent continuous responses</li>
-</ol>
-<ul>
-<li><a href="35_latent_cr_intro.html">Introduction to models with latent continuous responses</a></li>
-<li><a href="36_latent_cr_detection_model.html">Modeling censored data</a></li>
-</ul>
-<p><span style="color: red;">Censored data activity: </span><a href="censoring.html">click here</a></p>
-<p><span style="color: red;">Ordinal data activity: </span> <a href="ordinal_theory.html">theory</a> and <a href="ordinal.html">activity</a></p>
-</div>
-<div id="troubleshooting-algorithms-and-models" class="section level2">
-<h2>Troubleshooting algorithms and models</h2>
-<ol style="list-style-type: decimal">
-<li>Improving MCMC algorithms by centering covariates</li>
-</ol>
-<ul>
-<li><a href="Improving_MCMC_results.html">Improving MCMC results</a></li>
-<li><a href="Improving_MCMC_results1.html">Diagnosing the problem</a></li>
-<li><a href="Improving_MCMC_results2.html">Centering covariates</a></li>
-</ul>
-<p><span style="color: red;">Sensitive question activity: </span><a href="example_sensitive.html">click here</a></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Common problems in JAGS (and other MCMC algorithms)</li>
-</ol>
-<ul>
-<li><a href="99_jags_problems_bad_data.html">Bad data</a></li>
-<li><a href="100_jags_problems_init_values.html">Bad initial values</a></li>
-<li><a href="101_jags_problems_identif.html">Unidentifiable parameters</a></li>
-<li><a href="102_ones_trick.html">Speeding up MCMC algorithms</a></li>
-</ul>
-<p>There are many many other types of errors that JAGS can provide. Brian Reich describes a subset of them in his website <a href="https://www4.stat.ncsu.edu/~bjreich/BSMdata/errors.html" class="uri">https://www4.stat.ncsu.edu/~bjreich/BSMdata/errors.html</a>.</p>
-</div>
-<div id="miscellanea" class="section level2">
-<h2>Miscellanea</h2>
-<ol style="list-style-type: decimal">
-<li><p><a href="6_Big_sum_and_big_product.html">Big sum and big product notation</a></p></li>
-<li><p><a href="6a_Proportional_notation.html">“Proportional to” notation</a></p></li>
-<li><p><a href="rnorm_vs_dnorm.html">Difference between “dnorm” and “rnorm”</a></p></li>
-<li><p><a href="10a_Review_of_math_facts.html">Basic math facts</a></p></li>
-<li><p><a href="12_normal_normal_derivation.pdf">Derivation of normal-normal conjugate pair</a></p></li>
-<li><p><a href="9a_deducing_posterior.html">Why can we deduce the posterior distribution just by knowing <span class="math inline">\(p(\pi|X)\)</span> up to a proportionality constant?</a></p></li>
-</ol>
+<div id="comments" class="section level2">
+<h2>Comments?</h2>
+<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
 </article>
 </div>
