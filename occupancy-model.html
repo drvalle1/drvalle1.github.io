@@ -12,7 +12,7 @@
 
 
 
-<title>educ_assignm.knit</title>
+<title>occupancy-model.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -94,7 +94,7 @@ var ed=function(a){var b=Zc();b.accessedAny=!0;var c=b.entries[a]||{};return voi
 b)},ld=function(a,b){function c(){for(var e=0;e<b.length;e++)if(!gd(b[e]))return!0;return!1}if(c()){var d=!1;jd(b,function(e){d||c()||(d=!0,a(e))})}else a({})},md=function(a,b){function c(){for(var f=[],g=0;g<d.length;g++){var l=d[g];!1===ed(l)||e[l]||(f.push(l),e[l]=!0)}return f}var d=k(b)?[b]:b,e={};c().length!==d.length&&jd(d,function(f){var g=c();0<g.length&&(f.Ke=g,a(f))})};function nd(){}function qd(){};function rd(a){for(var b=[],c=0;c<sd.length;c++){var d=a(sd[c]);b[c]=!0===d?"1":!1===d?"0":"-"}return b.join("")}
 var sd=[O.C,O.M],td=function(a){var b=a[O.kf];b&&Q(40);var c=a[O.lf];c&&Q(41);for(var d=qa(b)?b:[b],e={ac:0};e.ac<d.length;e={ac:e.ac},++e.ac)xa(a,function(f){return function(g,l){if(g!==O.kf&&g!==O.lf){var m=d[f.ac],n=Qc.wi,p=Qc.oj;Zc().set(g,l,m,n,p,c)}}}(e))},ud=0,vd=function(a,b,c){xa(a,function(f,g){Zc().update(f,g)});kd(b,c&&c.priorityId);var d=Ea(),e=d-ud;ud&&0<=e&&1E3>e&&Q(66);ud=d},wd=function(a){var b=ed(a);return void 0!=b?b:!0},xd=function(){return"G1"+rd(ed)},yd=function(a,b){md(a,b)},
 zd=function(a,b){ld(a,b)};var Bd=function(a){return Ad?G.querySelectorAll(a):null},Cd=function(a,b){if(!Ad)return null;if(Element.prototype.closest)try{return a.closest(b)}catch(e){return null}var c=Element.prototype.matches||Element.prototype.webkitMatchesSelector||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector||Element.prototype.oMatchesSelector,d=a;if(!G.documentElement.contains(d))return null;do{try{if(c.call(d,b))return d}catch(e){break}d=d.parentElement||d.parentNode}while(null!==d&&1===d.nodeType);
-return null},Dd=!1;if(G.querySelectorAll)try{var Ed=G.querySelectorAll(":root");Ed&&1==Ed.length&&Ed[0]==G.documentElement&&(Dd=!0)}catch(a){}var Ad=Dd;var S={},T=A.google_tag_manager=A.google_tag_manager||{},Yd=Math.random();S.H="UA-109691465-2";S.Yc="";S.ud="370";S.V="dataLayer";S.lh="ChAIgL2hkQYQn5DkzcnWqo4PEicAKizol1owN9SK7MzSvd5Q2z0+s41o+lcjQWrSdAGYrlq94ZB8QUsaAvUg";var Zd={__cl:!0,__ecl:!0,__ehl:!0,__evl:!0,__fal:!0,__fil:!0,__fsl:!0,__hl:!0,__jel:!0,__lcl:!0,__sdl:!0,__tl:!0,__ytl:!0},$d={__paused:!0,__tg:!0},ae;for(ae in Zd)Zd.hasOwnProperty(ae)&&($d[ae]=!0);S.Zc="www.googletagmanager.com";var be,ce=S.Zc+"/gtm.js";ce=S.Zc+"/gtag/js";
+return null},Dd=!1;if(G.querySelectorAll)try{var Ed=G.querySelectorAll(":root");Ed&&1==Ed.length&&Ed[0]==G.documentElement&&(Dd=!0)}catch(a){}var Ad=Dd;var S={},T=A.google_tag_manager=A.google_tag_manager||{},Yd=Math.random();S.H="UA-109691465-1";S.Yc="";S.ud="370";S.V="dataLayer";S.lh="ChAIgL2hkQYQn5DkzcnWqo4PEicAKizolzNLWYoJbaEZ86dySwMz4DqoCrR/E7brR21BVOf5fRAqjlgaAikl";var Zd={__cl:!0,__ecl:!0,__ehl:!0,__evl:!0,__fal:!0,__fil:!0,__fsl:!0,__hl:!0,__jel:!0,__lcl:!0,__sdl:!0,__tl:!0,__ytl:!0},$d={__paused:!0,__tg:!0},ae;for(ae in Zd)Zd.hasOwnProperty(ae)&&($d[ae]=!0);S.Zc="www.googletagmanager.com";var be,ce=S.Zc+"/gtm.js";ce=S.Zc+"/gtag/js";
 be=ce;var de=Aa(""),ee=null,fe=null,ge="https://www.googletagmanager.com/a?id="+S.H+"&cv=1",ke={},le={},me=function(){var a=T.sequence||1;T.sequence=a+1;return a};S.kh="";var ne="";S.Ec=ne;var oe=new va,pe={},qe={},te={name:S.V,set:function(a,b){J(La(a,b),pe);re()},get:function(a){return se(a,2)},reset:function(){oe=new va;pe={};re()}},se=function(a,b){return 2!=b?oe.get(a):ue(a)},ue=function(a){var b,c=a.split(".");b=b||[];for(var d=pe,e=0;e<c.length;e++){if(null===d)return!1;if(void 0===d)break;d=d[c[e]];if(-1!==b.indexOf(d))return}return d},ve=function(a,b){qe.hasOwnProperty(a)||(oe.set(a,b),J(La(a,b),pe),re())},re=function(a){xa(qe,function(b,c){oe.set(b,c);J(La(b,void 0),pe);J(La(b,
 c),pe);a&&delete qe[b]})},we=function(a,b){var c,d=1!==(void 0===b?2:b)?ue(a):oe.get(a);"array"===vb(d)||"object"===vb(d)?c=J(d):c=d;return c};var xe,ye=!1,ze=function(a){if(!ye){ye=!0;xe=xe||{}}return xe[a]};var Ae=function(a){if(G.hidden)return!0;var b=a.getBoundingClientRect();if(b.top==b.bottom||b.left==b.right||!A.getComputedStyle)return!0;var c=A.getComputedStyle(a,null);if("hidden"===c.visibility)return!0;for(var d=a,e=c;d;){if("none"===e.display)return!0;var f=e.opacity,g=e.filter;if(g){var l=g.indexOf("opacity(");0<=l&&(g=g.substring(l+8,g.indexOf(")",l)),"%"==g.charAt(g.length-1)&&(g=g.substring(0,g.length-1)),f=Math.min(g,f))}if(void 0!==f&&0>=f)return!0;(d=d.parentElement)&&(e=A.getComputedStyle(d,
 null))}return!1};var Je=/:[0-9]+$/,Ke=function(a,b,c){for(var d=a.split("&"),e=0;e<d.length;e++){var f=d[e].split("=");if(decodeURIComponent(f[0]).replace(/\+/g," ")===b){var g=f.slice(1).join("=");return c?g:decodeURIComponent(g).replace(/\+/g," ")}}},Ne=function(a,b,c,d,e){b&&(b=String(b).toLowerCase());if("protocol"===b||"port"===b)a.protocol=Le(a.protocol)||Le(A.location.protocol);"port"===b?a.port=String(Number(a.hostname?a.port:A.location.port)||("http"===a.protocol?80:"https"===a.protocol?443:"")):"host"===
@@ -237,7 +237,7 @@ function Bp(a){var b=a._clear;xa(a,function(d,e){"_clear"!==d&&(b&&ve(d,void 0),
 function Dp(){for(var a=!1;!yp&&(0<vp.length||0<wp.length);){if(!xp&&Cp(vp[0])){var b={},c=(b.event="gtm.init_consent",b),d={},e=(d.event="gtm.init",d),f=vp[0]["gtm.uniqueEventId"];f&&(c["gtm.uniqueEventId"]=f-2,e["gtm.uniqueEventId"]=f-1);vp.unshift(c,e);xp=!0}yp=!0;delete pe.eventModel;re();var g=null,l=void 0;null==g&&(g=vp.shift());if(null!=g){var n=qp(g);if(n){var p=g;g=qp(p)?p.getUntrustedMessageValue():void 0;for(var q=["gtm.allowlist","gtm.blocklist","gtm.whitelist","gtm.blacklist","tagTypeBlacklist"],r=0;r<q.length;r++){var u=q[r],t=se(u,1);if(qa(t)||xb(t))t=J(t);qe[u]=t}}try{if(na(g))try{g.call(te)}catch(F){}else if(qa(g)){var v=g;if(k(v[0])){var y=v[0].split("."),x=y.pop(),w=v.slice(1),B=se(y.join("."),
 2);if(null!=B)try{B[x].apply(B,w)}catch(F){}}}else{if(ya(g)){a:{var z=g,C=l;if(z.length&&k(z[0])){var D=So[z[0]];if(D&&(!n||!To[z[0]])){g=D(z,C);break a}}g=void 0}if(!g){yp=!1;continue}}a=Bp(g)||a;}}finally{n&&re(!0)}}yp=!1}
 return!a}function Fp(){var b=Dp();try{Wo(S.H)}catch(c){}return b}
-var Ip=function(){var a=bb(S.V,[]),b=bb("google_tag_manager",{});b=b[S.V]=b[S.V]||{};Lh(function(){if(!b.gtmDom){b.gtmDom=!0;var e={};a.push((e.event="gtm.dom",e))}});ap(function(){if(!b.gtmLoad){b.gtmLoad=!0;var e={};a.push((e.event="gtm.load",e))}});b.subscribers=(b.subscribers||0)+1;var c=a.push;a.push=function(){var e;if(0<T.SANDBOXED_JS_SEMAPHORE){e=[];for(var f=0;f<arguments.length;f++)e[f]=new rp(arguments[f])}else e=[].slice.call(arguments,0);vp.push.apply(vp,e);var g=c.apply(a,e);if(300<this.length)for(Q(4);300<this.length;)this.shift();var l="boolean"!==typeof g||g;return Dp()&&l};var d=a.slice(0);vp.push.apply(vp,d);if(Gp()){H(Fp)}};var Gp=function(){var a=!0;return a};function Jp(a){if(null==a||0===a.length)return!1;var b=Number(a),c=Ea();return b<c+3E5&&b>c-9E5};var Kp={Lg:"UA-109691465-2"};var Lp={};Lp.od=new String("undefined");var lq=A.clearTimeout,mq=A.setTimeout,V=function(a,b,c,d){if(Gj()){b&&H(b)}else return hb(a,b,c,d)},nq=function(){return new Date},oq=function(){return A.location.href},pq=function(a){return Ne(Pe(a),"fragment")},qq=function(a){return Oe(Pe(a))},rq=function(a,b){return se(a,b||2)},sq=function(a,b,c){var d;b?(a.eventCallback=b,c&&(a.eventTimeout=c),d=zp(a)):d=zp(a);return d},tq=function(a,b){A[a]=b},X=function(a,b,
+var Ip=function(){var a=bb(S.V,[]),b=bb("google_tag_manager",{});b=b[S.V]=b[S.V]||{};Lh(function(){if(!b.gtmDom){b.gtmDom=!0;var e={};a.push((e.event="gtm.dom",e))}});ap(function(){if(!b.gtmLoad){b.gtmLoad=!0;var e={};a.push((e.event="gtm.load",e))}});b.subscribers=(b.subscribers||0)+1;var c=a.push;a.push=function(){var e;if(0<T.SANDBOXED_JS_SEMAPHORE){e=[];for(var f=0;f<arguments.length;f++)e[f]=new rp(arguments[f])}else e=[].slice.call(arguments,0);vp.push.apply(vp,e);var g=c.apply(a,e);if(300<this.length)for(Q(4);300<this.length;)this.shift();var l="boolean"!==typeof g||g;return Dp()&&l};var d=a.slice(0);vp.push.apply(vp,d);if(Gp()){H(Fp)}};var Gp=function(){var a=!0;return a};function Jp(a){if(null==a||0===a.length)return!1;var b=Number(a),c=Ea();return b<c+3E5&&b>c-9E5};var Kp={Lg:"UA-109691465-1"};var Lp={};Lp.od=new String("undefined");var lq=A.clearTimeout,mq=A.setTimeout,V=function(a,b,c,d){if(Gj()){b&&H(b)}else return hb(a,b,c,d)},nq=function(){return new Date},oq=function(){return A.location.href},pq=function(a){return Ne(Pe(a),"fragment")},qq=function(a){return Oe(Pe(a))},rq=function(a,b){return se(a,b||2)},sq=function(a,b,c){var d;b?(a.eventCallback=b,c&&(a.eventTimeout=c),d=zp(a)):d=zp(a);return d},tq=function(a,b){A[a]=b},X=function(a,b,
 c){b&&(void 0===A[a]||c&&!A[a])&&(A[a]=b);return A[a]},uq=function(a,b,c){return rf(a,b,void 0===c?!0:!!c)},vq=function(a,b,c){return 0===Af(a,b,c)},wq=function(a,b){if(Gj()){b&&H(b)}else jb(a,b)},xq=function(a){return!!Sp(a,"init",!1)},yq=function(a){Qp(a,"init",!0)},zq=function(a,b,c){Si&&(yb(a)||vj(c,b,a))};
 
 var Xq=["matches","webkitMatchesSelector","mozMatchesSelector","msMatchesSelector","oMatchesSelector"];function Yq(a,b){a=String(a);b=String(b);var c=a.length-b.length;return 0<=c&&a.indexOf(b,c)===c}var Zq=new va;function $q(a,b,c){var d=c?"i":void 0;try{var e=String(b)+d,f=Zq.get(e);f||(f=new RegExp(b,d),Zq.set(e,f));return f.test(a)}catch(g){return!1}}
@@ -286,103 +286,10 @@ Ia(le,Z.g);ec=mc;Ip();Gh=!1;Hh=0;if("interactive"==G.readyState&&!G.createEventO
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-109691465-2');
+  gtag('config', 'UA-109691465-1');
 </script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
-/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
-a.sourceLine {
-  pointer-events: auto;
-}
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -414,7 +321,7 @@ code span.ot { color: #007020; }
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
 <span class="author_name"><center>
-Educational example
+Occupancy model
 </center></span>
 <span class="author_bio mbm"><center>
 Denis Valle
@@ -437,81 +344,78 @@ body{ /* Normal  */
       font-size: 16px;
   }
 </style>
-<div id="educational-example" class="section level2">
-<h2>Educational example</h2>
-<p>In this assigment, we will be analyzing the “<a href="educ_data.csv">educ_data.csv</a>” dataset. In this dataset, each
-line corresponds to an individual student <span class="math inline">\(s_1,...,s_{100}\)</span> and each column is an
-individual question <span class="math inline">\(q_1,...,q_{40}\)</span>
-in a test. The content of each cell is either:</p>
-<ul>
-<li>0: the student got this question wrong,</li>
-<li>1: the student got this question right, or</li>
-<li>NA: the student was not presented this question</li>
-</ul>
-<p>Here are the data:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&#39;U:</span><span class="sc">\\</span><span class="st">uf</span><span class="sc">\\</span><span class="st">courses</span><span class="sc">\\</span><span class="st">bayesian course</span><span class="sc">\\</span><span class="st">group activities</span><span class="sc">\\</span><span class="st">6 example educ&#39;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">=</span><span class="fu">read.csv</span>(<span class="st">&#39;educ_data.csv&#39;</span>,<span class="at">as.is=</span>T)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat[,<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>])</span></code></pre></div>
-<pre><code>##    X q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14
-## 1 s1 NA NA  0  0 NA  0  0 NA NA  NA   1   1   0  NA
-## 2 s2  1 NA  1  0  0  0 NA NA NA   0  NA  NA  NA   0
-## 3 s3 NA  0  0  0 NA  0  1 NA  0   0   0   0   0   1
-## 4 s4 NA NA NA NA NA  0 NA NA NA   0   1   1  NA  NA
-## 5 s5 NA NA  1 NA NA  1 NA NA NA  NA   0   1  NA  NA
-## 6 s6  0  0 NA NA NA  0  0 NA NA  NA   0   0   0  NA</code></pre>
-<p>This type of data often arise from assessments in which the questions
-to be presented to the student are randomly drawn from a pool of
-questions.</p>
-<p>More broadly, these type of data are called dyadic data and they
-arise in several areas. For example, the performance of basketball teams
-might be summarized in a similar table where each row and each column is
-a different team and cell ij is equal to one if team i won team j, 0 if
-team i lost from team j, and NA if these teams have not faced each
-other. Similarly, these type of data arise in social networks depicting
-who is connected (or had a romantic relationship) with who.</p>
-</div>
-<div id="modeling-these-data" class="section level2">
-<h2>Modeling these data</h2>
-<p>We are interested in determining the ability of each student. That
-would be easier if everybody had been exposed to the same set of
-questions because we could just calculate the proportion of questions
-that each student got right. In our setting, this is more complicated
-because some students might have been given harder questions than
-others. Therefore, even if two students have gotten 80% of the questions
-right, that doesn’t mean that they have the same ability/skill. To
-correctly model these data, we will have to take into account that the
-difficulty of each question also varies.</p>
-<p>Determining the difficulty of each question would be easy to do if we
-had complete data. In this case, we would simply calculate the
-proportion of students that got each question right and that would give
-us a sense of how difficult each question was. Unfortunately, harder
-questions might have been predominantly given to students with high
-ability. As a result, two questions that were correctly answered by 80%
-of the students does not mean that these questions are equally easy.
-Determining the difficulty of each question will require us to determine
-the skill level of each student.</p>
-<p>To keep things simple, in this exercise we will assume that the data
-are missing at random (i.e., each student gets a random subset of
-questions to answer). In this assignment, I want you to:</p>
+<div id="problem-1" class="section level2">
+<h2>Problem 1</h2>
+<p>In this exercise, you will fit a model that is widely used in
+wildlife studies called occupancy models. In occupancy models,
+researchers are interested in determining the proportion of sites that
+have individuals of the focus species (i.e., sites that are occupied)
+and how environmental variables influence occupancy status. However, the
+tricky part is that lack of detection might mean either that:</p>
 <ol style="list-style-type: lower-alpha">
-<li>Come up with a generative model for these data</li>
-<li>Develop JAGS code to fit the model you developed in (a)</li>
-<li>Simulate data and fit your JAGS model to these data. Does the model
-work?</li>
-<li>Fit your JAGS model to the real data<br />
-</li>
-<li>Say that we believe that students that score higher in the SAT are
-likely to have greater ability/skill. How can we change our model to
-test this hypothesis?</li>
+<li>the site was unoccupied; or</li>
+<li>that it was occupied but no individuals were seen.</li>
 </ol>
-<p>Obs.: for this assignment, I want the Research &amp; Evaluation
-Methodology (REM) folks to abstain from helping in the development of
-the generative model.</p>
-<p><a href="index.html">Back to main menu</a></p>
-<div id="comments" class="section level3">
-<h3>Comments?</h3>
-<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
+<p>The generative model for an occupancy model without covariates is
+given by:</p>
+<p><span class="math display">\[s_i \sim Bernoulli (\pi) \]</span></p>
+<p>where <span class="math inline">\(s_i\)</span> is a binary variable
+indicating if the site is occupied (1) or not (0). We further assume
+that:</p>
+<p><span class="math display">\[D_i|s_i=1 \sim Binomial (T_i ,
+\delta)\]</span></p>
+<p>where <span class="math inline">\(D_i\)</span> is the number of times
+site i was detected to be occupied and <span class="math inline">\(T_i\)</span> is the number of times site i was
+visited. This equation states that, assuming that the site is occupied,
+the number of visits in which we detect at least one individual of the
+focus species is given by a binomial distribution (i.e., <span class="math inline">\(D_i\)</span> is an integer between 0 and <span class="math inline">\(T_i\)</span>).</p>
+<p>The goal of this exercise is to estimate the proportion of sites that
+are occupied (<span class="math inline">\(\pi\)</span>) and the
+detection probability (<span class="math inline">\(\delta\)</span>).</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Which priors would you choose for <span class="math inline">\(\pi\)</span> and <span class="math inline">\(\delta\)</span>? Why?</p></li>
+<li><p>Simulate some data following this generative model. When you fit
+these simulated data using JAGS, are we able to estimate well the
+parameters of our model?</p></li>
+<li><p>Fit the data provided below using JAGS. What are the posterior
+means and 95% credible intervals for these parameters?</p></li>
+</ol>
 </div>
+<div id="problem-2" class="section level2">
+<h2>Problem 2</h2>
+<p>Researchers are interested in understanding the relationship between
+occupancy probability <span class="math inline">\(\pi\)</span> and
+amount of vegetation.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>How would you change the model above to enable the study of this
+relationship? Describe your generative model</p></li>
+<li><p>Which priors did you choose for the model parameters?
+Why?</p></li>
+<li><p>Simulate some data following this generative model. When you fit
+these simulated data using JAGS, are we able to estimate well the
+parameters of our model?</p></li>
+<li><p>Fit the data provided below using JAGS. What do we find regarding
+the relationship between occupancy and amount of vegetation?</p></li>
+</ol>
+</div>
+<div id="dataset" class="section level2">
+<h2>Dataset:</h2>
+<p>For this exercise, use the data in the file <a href="fake%20data%20occupancy.csv">“fake data occupancy.csv”</a>. In
+this file, each row corresponds to a distinct site and we have the
+following columns:</p>
+<ol style="list-style-type: lower-alpha">
+<li>“D1” is the number of times each site was detected to be
+occupied;</li>
+<li>“T1” is the number of visits to each site; and</li>
+<li>“vegetation” contains information on the amount of vegetation at
+each site.</li>
+</ol>
+<p>Obs.: Don’t forget to add your code to the assignment so that we can
+see your work</p>
+</div>
+<div id="comments" class="section level2">
+<h2>Comments?</h2>
+<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
 </article>
 </div>
