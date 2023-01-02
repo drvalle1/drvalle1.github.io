@@ -13,7 +13,7 @@
 <meta name="author" content="Denis Valle" />
 
 
-<title>Introduction Bayesian Statistics Applied to Life Sciences</title>
+<title>Linear models ANOVA activity</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -101,7 +101,7 @@ Jg:"user_data_auto_status",Kg:"user_data_mode",Se:"user_data_settings",sa:"user_
 1,Id[R.g.Nb]=1,Id[R.g.Fd]=1,Id[R.g.Gd]=1,Id[R.g.Hd]=1,Id[R.g.Ic]=1,Id[R.g.lb]=1,Id[R.g.Kd]=1,Id[R.g.Ld]=1,Id[R.g.Fe]=1,Id[R.g.Nd]=1,Id[R.g.ra]=1,Id[R.g.Ie]=1,Id[R.g.Od]=1,Id[R.g.nb]=1,Id[R.g.xa]=1,Id[R.g.xb]=1,Id[R.g.Lc]=1,Id[R.g.Je]=1,Id[R.g.Ub]=1,Id[R.g.na]=1,Id[R.g.Mc]=1,Id[R.g.Se]=1,Id[R.g.Ma]=1,Id);P(65)&&(Jd[R.g.Qc]=1);var Kd=Object.freeze(Jd);Object.freeze([R.g.Ka,R.g.La,R.g.Tb,R.g.Ja,R.g.zg,R.g.sa,R.g.De,R.g.ei]);
 var Md={},Nd=Object.freeze((Md[R.g.Th]=1,Md[R.g.Uh]=1,Md[R.g.Vh]=1,Md[R.g.Wh]=1,Md[R.g.Xh]=1,Md[R.g.Yh]=1,Md[R.g.Zh]=1,Md[R.g.ai]=1,Md[R.g.bi]=1,Md[R.g.xe]=1,Md)),Od={},Pd=Object.freeze((Od[R.g.Sf]=1,Od[R.g.Tf]=1,Od[R.g.mc]=1,Od[R.g.nc]=1,Od[R.g.Uf]=1,Od[R.g.Ib]=1,Od[R.g.oc]=1,Od[R.g.sb]=1,Od[R.g.Jb]=1,Od[R.g.tb]=1,Od[R.g.Ba]=1,Od[R.g.qc]=1,Od[R.g.Ha]=1,Od[R.g.Vf]=1,Od)),Qd=Object.freeze([R.g.X,R.g.Lb,R.g.ub]),Rd=Object.freeze([].concat(Qd)),Sd=Object.freeze([R.g.Ia,R.g.Gd,R.g.Lc,R.g.Je,R.g.Ed]),
 Td=Object.freeze([].concat(Sd)),Ud={},Vd=(Ud[R.g.F]="1",Ud[R.g.R]="2",Ud),Wd={},Xd=Object.freeze((Wd[R.g.X]=1,Wd[R.g.uc]=1,Wd[R.g.wa]=1,Wd[R.g.Wa]=1,Wd[R.g.xd]=1,Wd[R.g.vc]=1,Wd[R.g.wc]=1,Wd[R.g.xc]=1,Wd[R.g.Z]=1,Wd[R.g.yc]=1,Wd[R.g.Da]=1,Wd[R.g.qa]=1,Wd[R.g.Ya]=1,Wd[R.g.Ia]=1,Wd[R.g.Za]=1,Wd[R.g.Pa]=1,Wd[R.g.ma]=1,Wd[R.g.Cc]=1,Wd[R.g.aa]=1,Wd[R.g.Xf]=1,Wd[R.g.Gc]=1,Wd[R.g.Hc]=1,Wd[R.g.De]=1,Wd[R.g.Hd]=1,Wd[R.g.Nd]=1,Wd[R.g.Ja]=1,Wd[R.g.Sb]=1,Wd[R.g.Ka]=1,Wd[R.g.La]=1,Wd[R.g.ug]=1,Wd[R.g.vg]=1,Wd[R.g.wg]=
-1,Wd[R.g.xg]=1,Wd[R.g.nb]=1,Wd[R.g.xa]=1,Wd[R.g.xb]=1,Wd[R.g.Ub]=1,Wd[R.g.Ea]=1,Wd[R.g.na]=1,Wd[R.g.Mc]=1,Wd[R.g.cb]=1,Wd[R.g.ca]=1,Wd[R.g.sa]=1,Wd[R.g.ka]=1,Wd));Object.freeze(R.g);var Yd={},Zd=E.google_tag_manager=E.google_tag_manager||{},$d=Math.random();Yd.Pc="bu0";Yd.Ye=Number("0")||0;Yd.fa="dataLayer";Yd.Rh="ChEIgJ7KnQYQnoar69zluveUARInAJ/08xMHpNCOnZuxvKp8pxif1TgNuNKNSW0uA3uWFzTMj0CRxsasGgLJoQ\x3d\x3d";var ae={__cl:!0,__ecl:!0,__ehl:!0,__evl:!0,__fal:!0,__fil:!0,__fsl:!0,__hl:!0,__jel:!0,__lcl:!0,__sdl:!0,__tl:!0,__ytl:!0},be={__paused:!0,__tg:!0},ce;for(ce in ae)ae.hasOwnProperty(ce)&&(be[ce]=!0);var de=Aa(""),ee=Aa(""),fe,ge=!1;
+1,Wd[R.g.xg]=1,Wd[R.g.nb]=1,Wd[R.g.xa]=1,Wd[R.g.xb]=1,Wd[R.g.Ub]=1,Wd[R.g.Ea]=1,Wd[R.g.na]=1,Wd[R.g.Mc]=1,Wd[R.g.cb]=1,Wd[R.g.ca]=1,Wd[R.g.sa]=1,Wd[R.g.ka]=1,Wd));Object.freeze(R.g);var Yd={},Zd=E.google_tag_manager=E.google_tag_manager||{},$d=Math.random();Yd.Pc="bu0";Yd.Ye=Number("0")||0;Yd.fa="dataLayer";Yd.Rh="ChEIgJ7KnQYQnoar69zluveUARInAJ/08xNrR7S3F59mkD8hgrwNBx90SuvqEW+BUoMMwyNlYQvfpZ3aGgJKVw\x3d\x3d";var ae={__cl:!0,__ecl:!0,__ehl:!0,__evl:!0,__fal:!0,__fil:!0,__fsl:!0,__hl:!0,__jel:!0,__lcl:!0,__sdl:!0,__tl:!0,__ytl:!0},be={__paused:!0,__tg:!0},ce;for(ce in ae)ae.hasOwnProperty(ce)&&(be[ce]=!0);var de=Aa(""),ee=Aa(""),fe,ge=!1;
 ge=!0;fe=ge;var he,ie=!1;he=ie;var je,ke=!1;je=ke;var le,me=!1;le=me;Yd.vd="www.googletagmanager.com";
 var ne=""+Yd.vd+(fe?"/gtag/js":"/gtm.js"),oe=null,pe=null,qe={},re={},se={},te=function(){var a=Zd.sequence||1;Zd.sequence=a+1;return a};Yd.Qh="";var ue="";Yd.Wd=ue;var ve=new ta,we={},xe={},Ae={name:Yd.fa,set:function(a,b){J(Ja(a,b),we);ye()},get:function(a){return ze(a,2)},reset:function(){ve=new ta;we={};ye()}},ze=function(a,b){return 2!=b?ve.get(a):Be(a)},Be=function(a){var b,c=a.split(".");b=b||[];for(var d=we,e=0;e<c.length;e++){if(null===d)return!1;if(void 0===d)break;d=d[c[e]];if(-1!==b.indexOf(d))return}return d},Ce=function(a,b){xe.hasOwnProperty(a)||(ve.set(a,b),J(Ja(a,b),we),ye())},ye=function(a){k(xe,function(b,c){ve.set(b,c);J(Ja(b),we);J(Ja(b,
 c),we);a&&delete xe[b]})},De=function(a,b){var c,d=1!==(void 0===b?2:b)?Be(a):ve.get(a);"array"===Ib(d)||"object"===Ib(d)?c=J(d):c=d;return c};var Ee,Fe=!1,Ge=function(a){if(!Fe){Fe=!0;Ee=Ee||{}}return Ee[a]};var He=function(){var a=E.screen;return{width:a?a.width:0,height:a?a.height:0}},Ie=function(a){if(F.hidden)return!0;var b=a.getBoundingClientRect();if(b.top==b.bottom||b.left==b.right||!E.getComputedStyle)return!0;var c=E.getComputedStyle(a,null);if("hidden"===c.visibility)return!0;for(var d=a,e=c;d;){if("none"===e.display)return!0;var f=e.opacity,g=e.filter;if(g){var l=g.indexOf("opacity(");0<=l&&(g=g.substring(l+8,g.indexOf(")",l)),"%"==g.charAt(g.length-1)&&(g=g.substring(0,g.length-1)),f=Math.min(g,
@@ -352,8 +352,7 @@ code span.ot { color: #007020; }
 <div class="col s12 m3">
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
-<span class="author_name">Introduction Bayesian Statistics Applied to
-Life Sciences</span>
+<span class="author_name">Linear models ANOVA activity</span>
 <span class="author_bio mbm">Denis Valle</span>
 <span class="author_bio mbm">January 2023</span>
 </div>
@@ -371,231 +370,38 @@ body{
 font-size: 16px;
 }
 </style>
-<p>This website contains part of the material I use for the
-semester-long course “Introduction to Bayesian Statistics Applied to
-Life Sciences” that I teach at Univ. of Florida. This course is geared
-towards students that have not been formally trained as statisticians
-and therefore it does not rely on linear algebra or advanced calculus.
-However, this material will require some understanding of basic calculus
-concepts and distribution theory as well as good grasp of
-programming.</p>
-<p>Observation: I am still putting this website together so some of the
-material is not posted yet and there might be some rough edges. If you
-have any suggestions or comments, feel free to contact me (drvalle at
-ufl dot edu).</p>
-<div id="introductory-material" class="section level2">
-<h2>Introductory material</h2>
-<ol start="0" style="list-style-type: decimal">
-<li><p><a href="0_Approach_to_teaching_Bayes.html">Approach to teaching
-Bayes</a></p></li>
-<li><p><a href="1_Introduction_to_Bayes.html">Introduction to
-Bayes</a></p></li>
-<li><p><a href="2_Probabilities_Example_death_penalty.html">Probabilities: a quick
-example on death penalty</a></p></li>
-<li><p><a href="3_Probability_rules.html">Probability rules</a></p></li>
-<li><p><a href="4_Bayes_theorem.html">Bayes theorem</a></p></li>
-</ol>
-<p><span style="color: red;">Submarine Activity:</span> <a href="submarine-example.html">click here</a></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="8B_PMF_and_PDF.html">Quick overview of PMFs and
-PDFs</a></p></li>
-<li><p>The likelihood function</p></li>
-</ol>
-<ul>
-<li><a href="7_Likelihood.html">Likelihood for simple models</a></li>
-<li><a href="7a_Likelihood_regression.html">Likelihood for regression
-models</a></li>
-<li><a href="7b_Model_notation.html">Notes on model notation and
-subscripts</a></li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>Maximum likelihood estimation (MLE)</li>
-</ol>
-<ul>
-<li><a href="8_MLE.html">Basic ideas</a></li>
-</ul>
-<p><span style="color: red;">Logistic + Poisson regressions
-activity:</span> <a href="MLE-logistic-poisson-regression.html">click
-here</a></p>
-<p><span style="color: red;">Biomass recovery activity:</span> <a href="biomass-recovery-assignm.html">click here</a></p>
-</div>
-<div id="basics-of-bayes" class="section level2">
-<h2>Basics of Bayes</h2>
+<div id="guiding-questions" class="section level2">
+<h2>Guiding questions</h2>
 <ol style="list-style-type: decimal">
-<li>Conjugate likelihood-prior pairs:</li>
+<li><p>ANOVA is a type of linear model. In ANOVA, we are often
+interested in comparing the mean of more than two groups. Please
+simulate data for 4 groups under the assumptions of a linear
+model.</p></li>
+<li><p>Once you have simulated these data, let’s fit a linear model. To
+this end, we will need to create <span class="math inline">\(N_g-1\)</span> binary covariates, where <span class="math inline">\(N_g\)</span> is the number of groups. In our
+example, this means that we will need to create 3 binary covariates
+because we have 4 groups/treatments. Creating these 3 binary variables
+might seem very exoteric but this is exactly what R does when you
+specify a variable to be a factor with 4 levels.</p></li>
+<li><p>Fit a linear model in a frequentist framework using the “lm”
+function</p></li>
 </ol>
-<ul>
-<li>Basketball example I: <a href="9_Conjugate_pairs_example.html">Binomial-beta pair</a></li>
-<li>Basketball example II: <a href="10_Informative_priors.html">Informative priors</a></li>
-<li>Basketball example III: <a href="11_Closing_basketball_example.html">Final remarks</a></li>
-</ul>
-<p><span style="color: red;">Cancer risk activity:</span> <a href="cancer-example.html">click here</a></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p><a href="12A_normal_normal_example.html">An example for the
-normal-normal conjugate pair</a></p></li>
-<li><p>Monte Carlo integration</p></li>
-</ol>
-<ul>
-<li><a href="14_Monte_Carlo_integration.html">MC1</a></li>
-<li><a href="15_Monte_Carlo_integration1.html">MC2</a></li>
-</ul>
+<p>a - What is the p-value of the model? This is shown at the very
+bottom together with the F-statistic and should be identical to the one
+we get using the “aov” function.</p>
+<p>b - Estimate the mean of each group by summing the appropriate
+parameters.</p>
 <ol start="4" style="list-style-type: decimal">
-<li><a href="18_gibbs_sampling.html">Gibbs sampling</a></li>
+<li>Fit a linear model in a Bayesian framework using our JAGS code. Do
+our parameter estimates from the Bayesian model match those estimated
+using a frequentist framework?</li>
 </ol>
-<ul>
-<li><a href="17_FCDs.html">Full conditional distributions</a></li>
-<li><a href="19_gibbs_sampling_example.html">Customized Gibbs sampler in
-R</a></li>
-</ul>
-<p><span style="color: red;">Climate change activity:</span> <a href="climate-change-assignm.html">click here</a></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p><a href="16_intro_generative_model.html">Generative models and
-inverse modeling</a></p></li>
-<li><p><a href="21_JAGS.html">JAGS</a></p></li>
-</ol>
-<ul>
-<li><a href="linear_models.html">Linear models: 2-sample t-test</a></li>
-</ul>
-<p><span style="color: red;">ANOVA activity: </span> <a href="ANOVA_activity.html">click here</a></p>
-<p><span style="color: red;">ANCOVA activity: </span> <a href="ANCOVA_activity.html">click here</a></p>
-<ol start="7" style="list-style-type: decimal">
-<li>Convergence</li>
-</ol>
-<ul>
-<li><a href="20_MCMC_convergence.html">MCMC convergence</a></li>
-<li><a href="convergence_problems.html">MCMC lack of
-convergence</a></li>
-</ul>
-<p><span style="color: red;">Mixture model activity: </span> <a href="example_mixture.html">click here</a></p>
-<p><span style="color: red;">Population size activity: </span> <a href="23_estimating_pop.html">description</a> and <a href="23a_estimating_pop.html">activity</a></p>
-<p><span style="color: red;">Educational data activity: </span><a href="educ_assignm.html">click here</a></p>
-<p><span style="color: red;">Occupancy model activity: </span><a href="occupancy-model.html">click here</a></p>
-<p><span style="color: red;">Sensitive question activity: </span><a href="example_sensitive.html">click here</a></p>
-<ol start="8" style="list-style-type: decimal">
-<li>Metropolis-Hastings algorithm</li>
-</ol>
-<ul>
-<li><a href="26_MH_algorithm.html">Motivation</a></li>
-<li><a href="27_MH_algorithm1.html">Algorithm</a></li>
-<li><a href="29_MH_algorithm_Intuition.html">Intuition</a></li>
-</ul>
-<p><span style="color: red;">Poisson regression activity: </span><a href="poisson_reg1.html">click here</a></p>
-<ol start="9" style="list-style-type: decimal">
-<li>Mixed models</li>
-</ol>
-<ul>
-<li><a href="41_mixed_models.html">Introduction to mixed models</a></li>
-<li><a href="43_mixed_models_shrinkage.html">Shrinkage</a></li>
-<li><a href="correlation_random_effect.html">Correlation induced by
-random effects</a></li>
-</ul>
-<p><span style="color: red;">Radon activity: </span><a href="example_radon.html">click here</a></p>
-<ol start="10" style="list-style-type: decimal">
-<li>Sources of uncertainty</li>
-</ol>
-<ul>
-<li><a href="30_sources_of_uncertainty.html">Example of river
-pollutant</a></li>
-<li><a href="31_sources_of_uncertainty1.html">Example of river pollutant
-across a range of covariate values</a></li>
-<li><a href="31a_predictive_distribution_model_assump.html">Model fit
-and predictive distribution</a></li>
-</ul>
-<p><span style="color: red;">River pollutant activity: </span><a href="river_pollutant.html">click here</a></p>
+<p><br /> <br /></p>
+<p><a href="index.html">Back to main menu</a></p>
 </div>
-<div id="less-common-but-interesting-models" class="section level2">
-<h2>Less common but interesting models</h2>
-<ol style="list-style-type: decimal">
-<li>Robust regression</li>
-</ol>
-<ul>
-<li><a href="32a_robust_regression.html">Introduction to robust
-regression</a></li>
-<li><a href="34A_robust_regression_integration">Integrating <span class="math inline">\(\tau_i\)</span> out from the robust regression
-model</a></li>
-</ul>
-<p><span style="color: red;">Robust regression activity: </span><a href="robust_regression.html">click here</a></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Models with latent continuous responses</li>
-</ol>
-<ul>
-<li><a href="35_latent_cr_intro.html">Introduction to models with latent
-continuous responses</a></li>
-<li><a href="36_latent_cr_detection_model.html">Modeling censored
-data</a></li>
-</ul>
-<p><span style="color: red;">Censored data activity: </span><a href="censoring.html">click here</a></p>
-<p><span style="color: red;">Ordinal data activity: </span> <a href="ordinal_theory.html">theory</a> and <a href="ordinal.html">activity</a></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Spatial and temporal correlation</li>
-</ol>
-<ul>
-<li><a href="46_space_time_correlation.html">Introduction</a></li>
-<li><a href="47_ST_correlation_fake_data_JAGS.html">Simulating data and
-fitting an AR1 model</a></li>
-<li><a href="48_ST_correlation_comparison.html">Comparing results from
-AR1 model and simple regression</a></li>
-</ul>
-<p><span style="color: red;">Model notation assignment: </span> <a href="model_notation_assignment.html">click here</a></p>
-<p><span style="color: red;">Spatial capture-recapture (SCR) model:
-</span></p>
-<ul>
-<li><a href="example_scr_marked.html">Introduction</a></li>
-<li><a href="SCR_mod1.html">Model 1</a></li>
-<li><a href="SCR_mod2.html">Model 2</a></li>
-<li><a href="SCR_mod3.html">Model 3</a></li>
-<li><a href="SCR_mod4.html">Model 4</a></li>
-</ul>
-</div>
-<div id="troubleshooting-algorithms-and-models" class="section level2">
-<h2>Troubleshooting algorithms and models</h2>
-<ol style="list-style-type: decimal">
-<li>Improving MCMC algorithms by centering covariates</li>
-</ol>
-<ul>
-<li><a href="Improving_MCMC_results.html">Improving MCMC
-results</a></li>
-<li><a href="Improving_MCMC_results1.html">Diagnosing the
-problem</a></li>
-<li><a href="Improving_MCMC_results2.html">Centering covariates</a></li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Common problems in JAGS (and other MCMC algorithms)</li>
-</ol>
-<ul>
-<li><a href="99_jags_problems_bad_data.html">Bad data</a></li>
-<li><a href="100_jags_problems_init_values.html">Bad initial
-values</a></li>
-<li><a href="101_jags_problems_identif.html">Unidentifiable
-parameters</a></li>
-<li><a href="105_jags_covs_sum_1.html">Unidentifiable parameters when
-covariates sum to one</a></li>
-<li><a href="102_ones_trick.html">Speeding up MCMC algorithms</a></li>
-</ul>
-<p>There are many many other types of errors that JAGS can provide.
-Brian Reich describes a subset of them in his website <a href="https://www4.stat.ncsu.edu/~bjreich/BSMdata/errors.html" class="uri">https://www4.stat.ncsu.edu/~bjreich/BSMdata/errors.html</a>.</p>
-</div>
-<div id="miscellanea" class="section level2">
-<h2>Miscellanea</h2>
-<ol start="0" style="list-style-type: decimal">
-<li><p><a href="00_how_to_learn_scripting_languages.html">Learning how
-to program</a></p></li>
-<li><p><a href="6_Big_sum_and_big_product.html">Big sum and big product
-notation</a></p></li>
-<li><p><a href="6a_Proportional_notation.html">“Proportional to”
-notation</a></p></li>
-<li><p><a href="rnorm_vs_dnorm.html">Difference between “dnorm” and
-“rnorm”</a></p></li>
-<li><p><a href="10a_Review_of_math_facts.html">Basic math
-facts</a></p></li>
-<li><p><a href="12_normal_normal_derivation.pdf">Derivation of
-normal-normal conjugate pair</a></p></li>
-<li><p><a href="9a_deducing_posterior.html">Why can we deduce the
-posterior distribution just by knowing <span class="math inline">\(p(\pi|X)\)</span> up to a proportionality
-constant?</a></p></li>
-<li><p><a href="inner_product.html">Inner product to help write long
-expression in a regression model with many covariates</a></p></li>
-</ol>
+<div id="comments" class="section level2">
+<h2>Comments?</h2>
+<p>Send me an email at <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHvSURBVFhH7ZKBrcIwDES7C8MwC6N0EgZhjs7Sr4d4XycrJQUhoKgnRW0S+3z2ZZh3fBS7AR/GbsCHscqA4/E4n8/n2+41OBwO/5zwj+N4/X83hmG4rtPp9DId9Ha5XG67+9isATTo8FxwPgLqU1vsBqwEr5WBV8DB+TRNt5P7IB4u8TUG5OtCVBqgSO9pIJsAOQTEGJsm3jPAAbO4S5BTzxKphz6oI9CktqzBIrbqSJib8QJNnsObBsCZfac+0DQghyO5ewjZO2DNEsQ5IAoppMYtGcA3h1aHks3xDycx5mR94pIrDQDw5jBqrQR56q298K8m8nMPp3mga0AlB0nSEplDgbzVRG2enBZnFcw/Z4AaDjQbyZilePCsAZUH2DP1lu5A7Sd1g6YBlTBJWiKTNBu04Vw9AzivOdwD4q1DnFx5nkN9lQHwV00sDVCfoOZbDTCHb4rhzLzafN4lZxWc4FzxS1wOBtRenjWgNRNB3ewZEKuG2k/XAIBIkxCU+yWRFGXlXQ5Dnp4BfGtDIpulCfjU5n/Wd+A5DPZrDJBTJE+i1lBX7tXMGXddAww0mNUzwMI2B3Iw5DH0ngFALpd3NvsIyJVHPc8YYO1cIvskH540yzsfaNZ8rJsvgOb8CjbZSb64fF1bxO88pU1inv8Ai3bJeg+cKvwAAAAASUVORK5CYII=" /></p>
 </div>
 </article>
 </div>
