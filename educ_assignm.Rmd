@@ -1,0 +1,67 @@
+---
+title:  Educational example
+author: Denis Valle
+date: March 2026
+bibliography: mybibliog.bib
+mainfont: Arial
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+    includes: 
+      in_header: GA_script.html
+---
+
+<style type="text/css">
+body{ /* Normal  */
+      font-size: 16px;
+  }
+</style>
+
+## Educational example
+
+\quad \quad In this assigment, we will be analyzing the "[educ_data.csv](educ_data.csv)" dataset. In this dataset, each line corresponds to an individual student $s_1,...,s_{100}$ and each column is an individual question $q_1,...,q_{40}$ in a test. The content of each cell is either:
+
+- 0: the student got this question wrong, 
+- 1: the student got this question right, or 
+- NA: the student was not presented this question
+
+Here are the data:
+```{r, eval=T}
+setwd('U:\\uf\\courses\\bayesian course\\group activities\\6 example educ')
+dat=read.csv('educ_data.csv',as.is=T)
+head(dat[,1:15])
+```
+
+This type of data often arise from assessments in which the questions presented to the student are randomly drawn from a pool of questions. 
+
+More broadly, this type of data (and the models used to analyze these data) also arise in several other areas. For example, the performance of basketball teams might be summarized in a similar table where each row and each column is a different team and cell ij is equal to one if team i won team j, 0 if team i lost from team j, and NA if these teams have not faced each other. Similarly, these type of data arise in social networks depicting who is connected with whom.
+
+## Modeling these data
+
+We are interested in determining the ability of each student. That would be easier if everybody had been exposed to the same set of questions because we could just calculate the proportion of questions that each student got right. In our setting, this is more complicated because some students might have been given harder questions than others. Therefore, even if two students have gotten 80% of the questions right, that doesn't mean that they have the same ability/skill. To correctly model these data, we will have to take into account that the difficulty of each question also varies. 
+
+Determining the difficulty of each question would be easy to do if we had complete data. In this case, we would simply calculate the proportion of students that got each question right and that would give us a sense of how difficult each question was. Unfortunately, harder questions might have been predominantly given to students with high ability. As a result, two questions that were correctly answered by 80% of the students does not mean that these questions are equally easy. Determining the difficulty of each question will require us to determine the skill level of each student.
+
+To keep things simple, in this exercise we will assume that the data are missing at random (i.e., each student gets a random subset of questions to answer). In this assignment, I want you to:
+
+a) Come up with a generative model for these data.
+
+b) Develop JAGS code to fit the model you developed in (a).
+
+c) Simulate data and fit your JAGS model to these data. Does the model work?
+
+d) Based on the data, compare students 1 and 2. Which one has higher skill? Fit your JAGS model to the real data. Based on the model results, do we arrive at the same conclusion regarding students 1 and 2?
+
+e) Say that we believe that students that score higher in the SAT are likely to have greater ability/skill. How can we change our generative model to test this hypothesis? For this task, just focus on writing the equations of your generative model; don't worry about simulating data or creating the actual JAGS code for this.
+
+f) Use the model that you created to fit the real-world data in this [height assignment page](educ_height_assignm.html). How well does this model work when estimating the "latent" height construct?
+
+Obs.: for this assignment, I want the Research & Evaluation Methodology (REM) folks to abstain from helping in the development of the generative model.
+
+[Back to main menu](index.html)
+
+### Comments?
+
+Send me an email at ![image of email](U:\uf\courses\bayesian course\rmarkdown\email.PNG)
+
