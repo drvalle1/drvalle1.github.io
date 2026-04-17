@@ -267,13 +267,13 @@ likelihood.</p></li>
     mu[i]=exp(b0+b1*logA[i])
     S[i]~dpois(mu[i])
     
-    #calculate deviance for observed data
+    #calculate log-likelihood for observed data
     Tobs[i]=logdensity.pois(S[i],mu[i])
     
     #simulate data
     Ssim[i]~dpois(mu[i])
     
-    #calculate deviance for simulated data
+    #calculate log-likelihood for simulated data
     Tsim[i]=logdensity.pois(Ssim[i],mu[i])
   }
 
